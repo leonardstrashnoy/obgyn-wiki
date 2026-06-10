@@ -97,6 +97,71 @@ async function loadGraph() {
                 runQuery();
                 select.value = "";
 
+// Reliable dropdown trigger after "and " / "or " + space
+const searchBox = document.getElementById("search");
+if (searchBox) {
+    searchBox.addEventListener("input", () => {
+        const dropdown = document.getElementById("example-select");
+        if (!dropdown) return;
+        const val = searchBox.value.toLowerCase();
+        
+        if (val.endsWith(" and ") || val.endsWith(" or ") || 
+            val.endsWith(" & ") || val.endsWith(" | ")) {
+            const term = val.split(/ and | or | & | \| /)[0].trim();
+            if (term.length > 1) {
+                dropdown.innerHTML = `
+                    <option value="">-- Related to "${term}" --</option>
+                    <option value="${term} and hypertension">${term} AND hypertension</option>
+                    <option value="${term} and diabetes">${term} AND diabetes</option>
+                    <option value="${term} and preeclampsia">${term} AND preeclampsia</option>
+                    <option value="${term} or eclampsia">${term} OR eclampsia</option>
+                `;
+            }
+        }
+    });
+}
+
+
+// AND/OR dropdown suggestions
+const si1 = document.getElementById("search");
+if (si) {
+    si.addEventListener("input", () => {
+        const sel1 = document.getElementById("example-select");
+        if (!sel) return;
+        const v = si.value.toLowerCase();
+        if (v.includes(" and ") || v.includes(" or ") || v.includes(" & ") || v.includes(" | ")) {
+            const term = v.split(/ and | or | & | \| /)[0].trim();
+            if (term.length > 1) {
+                sel.innerHTML = `
+                    <option value="">-- Related to "${term}" --</option>
+                    <option value="${term} and hypertension">${term} AND hypertension</option>
+                    <option value="${term} and diabetes">${term} AND diabetes</option>
+                    <option value="${term} and preeclampsia">${term} AND preeclampsia</option>
+                    <option value="${term} or eclampsia">${term} OR eclampsia</option>
+                `;
+            }
+        }
+    });
+}
+
+
+const si2 = document.getElementById("search");
+if (si) {
+    si.addEventListener("input", () => {
+        const sel2 = document.getElementById("example-select");
+        if (!sel) return;
+        const v = si.value.toLowerCase();
+        if (v.includes(" and ") || v.includes(" or ") || v.includes(" & ") || v.includes(" | ")) {
+            const term = v.split(/ and | or | & | \| /)[0].trim();
+            if (term.length > 1) {
+                sel.innerHTML = ` <option value="">-- Related to "${term}" --</option> <option value="${term} and hypertension">${term} AND hypertension</option> <option value="${term} and diabetes">${term} AND diabetes</option> <option value="${term} and preeclampsia">${term} AND preeclampsia</option> <option value="${term} or eclampsia">${term} OR eclampsia</option> `;
+            }
+        }
+    });
+}
+
+
+
 
 
 // Dynamic AND/OR suggestions in dropdown based on search input
@@ -123,7 +188,6 @@ if (searchInput) {
             }
         };
     }
-}
 
         setIndicator('ok', `${graphData.nodes.length} nodes loaded`);
         startSSE();
@@ -851,6 +915,71 @@ function initLegend() {
                 runQuery();
                 select.value = "";
 
+// Reliable dropdown trigger after "and " / "or " + space
+const searchBox = document.getElementById("search");
+if (searchBox) {
+    searchBox.addEventListener("input", () => {
+        const dropdown = document.getElementById("example-select");
+        if (!dropdown) return;
+        const val = searchBox.value.toLowerCase();
+        
+        if (val.endsWith(" and ") || val.endsWith(" or ") || 
+            val.endsWith(" & ") || val.endsWith(" | ")) {
+            const term = val.split(/ and | or | & | \| /)[0].trim();
+            if (term.length > 1) {
+                dropdown.innerHTML = `
+                    <option value="">-- Related to "${term}" --</option>
+                    <option value="${term} and hypertension">${term} AND hypertension</option>
+                    <option value="${term} and diabetes">${term} AND diabetes</option>
+                    <option value="${term} and preeclampsia">${term} AND preeclampsia</option>
+                    <option value="${term} or eclampsia">${term} OR eclampsia</option>
+                `;
+            }
+        }
+    });
+}
+
+
+// AND/OR dropdown suggestions
+const si3 = document.getElementById("search");
+if (si) {
+    si.addEventListener("input", () => {
+        const sel = document.getElementById("example-select");
+        if (!sel) return;
+        const v = si.value.toLowerCase();
+        if (v.includes(" and ") || v.includes(" or ") || v.includes(" & ") || v.includes(" | ")) {
+            const term = v.split(/ and | or | & | \| /)[0].trim();
+            if (term.length > 1) {
+                sel.innerHTML = `
+                    <option value="">-- Related to "${term}" --</option>
+                    <option value="${term} and hypertension">${term} AND hypertension</option>
+                    <option value="${term} and diabetes">${term} AND diabetes</option>
+                    <option value="${term} and preeclampsia">${term} AND preeclampsia</option>
+                    <option value="${term} or eclampsia">${term} OR eclampsia</option>
+                `;
+            }
+        }
+    });
+}
+
+
+const si = document.getElementById("search");
+if (si) {
+    si.addEventListener("input", () => {
+        const sel = document.getElementById("example-select");
+        if (!sel) return;
+        const v = si.value.toLowerCase();
+        if (v.includes(" and ") || v.includes(" or ") || v.includes(" & ") || v.includes(" | ")) {
+            const term = v.split(/ and | or | & | \| /)[0].trim();
+            if (term.length > 1) {
+                sel.innerHTML = ` <option value="">-- Related to "${term}" --</option> <option value="${term} and hypertension">${term} AND hypertension</option> <option value="${term} and diabetes">${term} AND diabetes</option> <option value="${term} and preeclampsia">${term} AND preeclampsia</option> <option value="${term} or eclampsia">${term} OR eclampsia</option> `;
+            }
+        }
+    });
+}
+
+
+
 
 
 // Dynamic AND/OR suggestions in dropdown based on search input
@@ -877,13 +1006,16 @@ if (searchInput) {
             }
         };
     }
-}
 
     // Initial active state
     setTimeout(updateLegendActiveState, 500);
 }
 
-// === DRAGGABLE + POSITION PERSISTENT PANELS (added per user request) ===
+// ============================================================================
+// UI ENHANCEMENTS (draggable, resizable, legend filters, blur, ESC)
+// ============================================================================
+
+// --- Draggable panels with position persistence ---
 function makeDraggable(panelId, storageKey) {
     const panel = document.getElementById(panelId);
     if (!panel) return;
@@ -891,7 +1023,6 @@ function makeDraggable(panelId, storageKey) {
     let isDragging = false;
     let startX, startY, startLeft, startTop;
 
-    // Restore saved position
     const saved = localStorage.getItem(storageKey);
     if (saved) {
         try {
@@ -903,11 +1034,11 @@ function makeDraggable(panelId, storageKey) {
         } catch(e) {}
     }
 
-    const header = panel.querySelector('.panel-header') || panel;
-
+    const header = panel.querySelector('h2') || panel.querySelector('.legend-header') || panel;
     header.style.cursor = 'move';
-    header.addEventListener('mousedown', (e) => {
-        if (e.target.tagName === 'INPUT' || e.target.tagName === 'BUTTON' || e.target.tagName === 'SELECT') return;
+
+    header.addEventListener('mousedown', function(e) {
+        if (e.target.tagName.match(/INPUT|BUTTON|SELECT|TEXTAREA/)) return;
         isDragging = true;
         startX = e.clientX;
         startY = e.clientY;
@@ -916,180 +1047,141 @@ function makeDraggable(panelId, storageKey) {
         document.body.style.userSelect = 'none';
     });
 
-    document.addEventListener('mousemove', (e) => {
+    document.addEventListener('mousemove', function(e) {
         if (!isDragging) return;
-        const dx = e.clientX - startX;
-        const dy = e.clientY - startY;
-        panel.style.left = (startLeft + dx) + 'px';
-        panel.style.top = (startTop + dy) + 'px';
+        panel.style.left = (startLeft + (e.clientX - startX)) + 'px';
+        panel.style.top = (startTop + (e.clientY - startY)) + 'px';
         panel.style.right = 'auto';
         panel.style.bottom = 'auto';
     });
 
-    document.addEventListener('mouseup', () => {
+    document.addEventListener('mouseup', function() {
         if (!isDragging) return;
         isDragging = false;
         document.body.style.userSelect = '';
-        // Save position
-        const pos = { left: panel.style.left, top: panel.style.top };
-        localStorage.setItem(storageKey, JSON.stringify(pos));
+        localStorage.setItem(storageKey, JSON.stringify({
+            left: panel.style.left,
+            top: panel.style.top
+        }));
     });
 }
 
-// Make all main panels draggable with position memory
 function initDraggablePanels() {
-    makeDraggable('search-panel', 'search-panel-pos');
-    makeDraggable('info-panel', 'info-panel-pos');
-    makeDraggable('query-bar', 'query-bar-pos');
-    makeDraggable('query-result', 'query-result-pos');
-    makeDraggable('legend', 'legend-pos');
+    makeDraggable('search-panel', 'obgyn-search-pos');
+    makeDraggable('info-panel', 'obgyn-info-pos');
+    makeDraggable('query-bar', 'obgyn-query-pos');
+    makeDraggable('query-result', 'obgyn-result-pos');
+    makeDraggable('legend', 'obgyn-legend-pos');
 }
 
-// Call after DOM ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initDraggablePanels);
-} else {
-    initDraggablePanels();
-}
-
-// === RESIZABLE PANELS ===
+// --- Resizable panels ---
 function makeResizable(panelId, storageKey) {
     const panel = document.getElementById(panelId);
     if (!panel) return;
 
     panel.style.resize = 'both';
     panel.style.overflow = 'auto';
-    panel.style.minWidth = '280px';
-    panel.style.minHeight = '120px';
-    panel.style.maxWidth = '600px';
-    panel.style.maxHeight = '80vh';
+    panel.style.minWidth = '260px';
+    panel.style.minHeight = '140px';
 
-    // Restore size if saved
-    const savedSize = localStorage.getItem(storageKey + '-size');
+    const savedSize = localStorage.getItem(storageKey);
     if (savedSize) {
         try {
-            const size = JSON.parse(savedSize);
-            if (size.width) panel.style.width = size.width;
-            if (size.height) panel.style.height = size.height;
-        } catch(e) {}
+            const s = JSON.parse(savedSize);
+            if (s.w) panel.style.width = s.w;
+            if (s.h) panel.style.height = s.h;
+        } catch(e){}
     }
 
-    // Save size on resize end
-    let resizeTimer;
-    const observer = new ResizeObserver(() => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => {
-            const size = { width: panel.style.width, height: panel.style.height };
-            localStorage.setItem(storageKey + '-size', JSON.stringify(size));
-        }, 300);
-    });
-    observer.observe(panel);
+    let t;
+    new ResizeObserver(() => {
+        clearTimeout(t);
+        t = setTimeout(() => {
+            localStorage.setItem(storageKey, JSON.stringify({
+                w: panel.style.width,
+                h: panel.style.height
+            }));
+        }, 250);
+    }).observe(panel);
 }
 
 function initResizablePanels() {
-    ['search-panel', 'info-panel', 'query-bar', 'query-result', 'legend'].forEach(id => {
-        makeResizable(id, id + '-size');
+    ['search-panel','info-panel','query-bar','query-result','legend'].forEach(id => {
+        makeResizable(id, 'obgyn-' + id + '-size');
     });
+}
+
+// --- Enhanced legend multi-select filtering ---
+
+function toggleLegendType(type) {
+    const items = document.querySelectorAll('#legend .legend-item');
+    
+    if (activeFilters.has('all')) activeFilters.clear();
+    
+    if (activeFilters.has(type)) {
+        activeFilters.delete(type);
+    } else {
+        activeFilters.add(type);
+    }
+    
+    if (activeFilters.size === 0) activeFilters.add('all');
+
+    items.forEach(el => {
+        const t = el.dataset.type;
+        const active = activeFilters.has('all') || activeFilters.has(t);
+        el.style.opacity = active ? '1' : '0.35';
+        el.style.border = active ? '1px solid #58a6ff' : 'none';
+    });
+
+    if (window.nodesDataset) {
+        const showAll = activeFilters.has('all');
+        window.nodesDataset.forEach(n => {
+            const group = n.group || n.type;
+            const visible = showAll || activeFilters.has(group);
+            window.nodesDataset.update({id: n.id, hidden: !visible});
+        });
+    }
+}
+
+// --- Blur / transparency styles (injected) ---
+function injectBlurStyles() {
+    const style = document.createElement('style');
+    style.textContent = `
+        #search-panel, #info-panel, #query-bar, #query-result {
+            background: rgba(22,27,34,0.93) !important;
+            backdrop-filter: blur(12px);
+        }
+        #legend { background: rgba(22,27,34,0.88) !important; backdrop-filter: blur(10px); }
+    `;
+    document.head.appendChild(style);
+}
+
+// --- ESC dismiss ---
+document.addEventListener('keydown', function(e) {
+    if (e.key !== 'Escape') return;
+    const panels = ['info-panel', 'query-result', 'search-panel'];
+    for (const id of panels) {
+        const p = document.getElementById(id);
+        if (p && p.style.display !== 'none') {
+            p.style.display = 'none';
+            return;
+        }
+    }
+    const legend = document.getElementById('legend');
+    if (legend) legend.classList.toggle('collapsed');
+});
+
+// --- Boot enhancements ---
+function bootUIEnhancements() {
+    injectBlurStyles();
+    setTimeout(initDraggablePanels, 600);
+    setTimeout(initResizablePanels, 800);
+    // Expose for console debugging
+    window.toggleLegendType = toggleLegendType;
 }
 
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initResizablePanels);
+    document.addEventListener('DOMContentLoaded', bootUIEnhancements);
 } else {
-    initResizablePanels();
+    bootUIEnhancements();
 }
-
-// === INTERACTIVE LEGEND + MULTI-SELECT FILTERS ===
-let activeTypeFilters = new Set(['all']);
-
-function toggleLegendType(type) {
-    const legendItems = document.querySelectorAll('#legend .legend-item');
-    
-    if (type === 'all' || activeTypeFilters.has('all')) {
-        activeTypeFilters.clear();
-        activeTypeFilters.add(type);
-    } else if (activeTypeFilters.has(type)) {
-        activeTypeFilters.delete(type);
-        if (activeTypeFilters.size === 0) activeTypeFilters.add('all');
-    } else {
-        activeTypeFilters.add(type);
-        activeTypeFilters.delete('all');
-    }
-
-    // Update visual active state
-    legendItems.forEach(item => {
-        const t = item.dataset.type;
-        if (activeTypeFilters.has('all') || activeTypeFilters.has(t)) {
-            item.style.opacity = '1';
-            item.style.border = '1px solid #58a6ff';
-        } else {
-            item.style.opacity = '0.4';
-            item.style.border = 'none';
-        }
-    });
-
-    // Apply filter to network
-    applyTypeFilters();
-}
-
-function applyTypeFilters() {
-    if (!nodesDataset) return;
-
-    const showAll = activeTypeFilters.has('all');
-    nodesDataset.forEach(node => {
-        const nodeType = node.group || node.type || 'default';
-        const visible = showAll || activeTypeFilters.has(nodeType);
-        nodesDataset.update({id: node.id, hidden: !visible});
-    });
-}
-
-function updateLegendActiveState() {
-    const items = document.querySelectorAll('#legend .legend-item');
-    items.forEach(item => {
-        item.style.transition = 'opacity 0.15s, border 0.15s';
-    });
-}
-
-// === ESC TO DISMISS + QUERY PANEL UX ===
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        const info = document.getElementById('info-panel');
-        const queryRes = document.getElementById('query-result');
-        if (info && info.style.display !== 'none') {
-            info.style.display = 'none';
-        } else if (queryRes && queryRes.style.display !== 'none') {
-            queryRes.style.display = 'none';
-        } else {
-            // collapse legend if open
-            const legend = document.getElementById('legend');
-            if (legend && !legend.classList.contains('collapsed')) {
-                legend.classList.add('collapsed');
-            }
-        }
-    }
-});
-
-// Improve query result panel visibility
-function showQueryResult(html) {
-    const container = document.getElementById('query-result');
-    if (!container) return;
-    container.innerHTML = html;
-    container.style.display = 'block';
-    // Auto-save position handled by draggable
-}
-
-// === FINAL INIT HOOK ===
-function initAllUIEnhancements() {
-    // These are already called via DOMContentLoaded above, but ensure after graph load
-    setTimeout(() => {
-        if (typeof initDraggablePanels === 'function') initDraggablePanels();
-        if (typeof initResizablePanels === 'function') initResizablePanels();
-        if (typeof updateLegendActiveState === 'function') updateLegendActiveState();
-    }, 800);
-}
-
-// Hook into existing load
-const origLoad = window.loadGraph || function(){};
-window.loadGraph = function() {
-    origLoad();
-    setTimeout(initAllUIEnhancements, 1200);
-};
