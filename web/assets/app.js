@@ -86,108 +86,19 @@ async function loadGraph() {
         graphData = await resp.json();
         initNetwork();
         updateStats();
-    updateLegendCounts();
+        updateLegendCounts();
 
-    // Example dropdown
-    const select = document.getElementById("example-select");
-    if (select) {
-        select.onchange = () => {
-            if (select.value) {
-                document.getElementById("query-input").value = select.value;
-                runQuery();
-                select.value = "";
-
-// Reliable dropdown trigger after "and " / "or " + space
-const searchBox = document.getElementById("search");
-if (searchBox) {
-    searchBox.addEventListener("input", () => {
-        const dropdown = document.getElementById("example-select");
-        if (!dropdown) return;
-        const val = searchBox.value.toLowerCase();
-        
-        if (val.endsWith(" and ") || val.endsWith(" or ") || 
-            val.endsWith(" & ") || val.endsWith(" | ")) {
-            const term = val.split(/ and | or | & | \| /)[0].trim();
-            if (term.length > 1) {
-                dropdown.innerHTML = `
-                    <option value="">-- Related to "${term}" --</option>
-                    <option value="${term} and hypertension">${term} AND hypertension</option>
-                    <option value="${term} and diabetes">${term} AND diabetes</option>
-                    <option value="${term} and preeclampsia">${term} AND preeclampsia</option>
-                    <option value="${term} or eclampsia">${term} OR eclampsia</option>
-                `;
-            }
+        // Example dropdown
+        const select = document.getElementById("example-select");
+        if (select) {
+            select.onchange = () => {
+                if (select.value) {
+                    document.getElementById("query-input").value = select.value;
+                    runQuery();
+                    select.value = "";
+                }
+            };
         }
-    });
-}
-
-
-// AND/OR dropdown suggestions
-const si1 = document.getElementById("search");
-if (si) {
-    si.addEventListener("input", () => {
-        const sel1 = document.getElementById("example-select");
-        if (!sel) return;
-        const v = si.value.toLowerCase();
-        if (v.includes(" and ") || v.includes(" or ") || v.includes(" & ") || v.includes(" | ")) {
-            const term = v.split(/ and | or | & | \| /)[0].trim();
-            if (term.length > 1) {
-                sel.innerHTML = `
-                    <option value="">-- Related to "${term}" --</option>
-                    <option value="${term} and hypertension">${term} AND hypertension</option>
-                    <option value="${term} and diabetes">${term} AND diabetes</option>
-                    <option value="${term} and preeclampsia">${term} AND preeclampsia</option>
-                    <option value="${term} or eclampsia">${term} OR eclampsia</option>
-                `;
-            }
-        }
-    });
-}
-
-
-const si2 = document.getElementById("search");
-if (si) {
-    si.addEventListener("input", () => {
-        const sel2 = document.getElementById("example-select");
-        if (!sel) return;
-        const v = si.value.toLowerCase();
-        if (v.includes(" and ") || v.includes(" or ") || v.includes(" & ") || v.includes(" | ")) {
-            const term = v.split(/ and | or | & | \| /)[0].trim();
-            if (term.length > 1) {
-                sel.innerHTML = ` <option value="">-- Related to "${term}" --</option> <option value="${term} and hypertension">${term} AND hypertension</option> <option value="${term} and diabetes">${term} AND diabetes</option> <option value="${term} and preeclampsia">${term} AND preeclampsia</option> <option value="${term} or eclampsia">${term} OR eclampsia</option> `;
-            }
-        }
-    });
-}
-
-
-
-
-
-// Dynamic AND/OR suggestions in dropdown based on search input
-const searchInput = document.getElementById('search');
-if (searchInput) {
-    searchInput.addEventListener('input', () => {
-        const select = document.getElementById('example-select');
-        if (!select) return;
-
-        const val = searchInput.value.trim().toLowerCase();
-        if (val.length > 2) {
-            // Show smart AND/OR suggestions
-            select.innerHTML = `
-                <option value="">-- Suggestions --</option>
-                <option value="${val} and hypertension">${val} AND hypertension</option>
-                <option value="${val} and diabetes">${val} AND diabetes</option>
-                <option value="${val} or eclampsia">${val} OR eclampsia</option>
-                <option value="${val}">${val}</option>
-            `;
-        }
-    });
-}
-
-            }
-        };
-    }
 
         setIndicator('ok', `${graphData.nodes.length} nodes loaded`);
         startSSE();
@@ -197,7 +108,6 @@ if (searchInput) {
         setIndicator('err', 'API offline');
     }
 }
-
 function startSSE() {
     if (!window.EventSource) return;
     const evtUrl = api('/events');
