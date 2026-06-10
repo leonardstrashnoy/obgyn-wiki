@@ -1,0 +1,59 @@
+/* Minimal supporting styles for OB/GYN Wiki UI */
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+  padding: 0;
+}
+.chip {
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid #30363d;
+  background: var(--panel-header);
+  color: var(--text);
+  font-size: 12px;
+  cursor: pointer;
+}
+.chip.active {
+  background: #58a6ff;
+  color: #0a0c10;
+  border-color: #58a6ff;
+}
+.btn {
+  padding: 8px 16px;
+  background: #58a6ff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn.secondary {
+  background: #21262d;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+#query-result.panel {
+  position: fixed;
+  bottom: 120px;
+  right: 20px;
+  width: 420px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 110;
+  padding: 16px;
+}
+/* Enhanced semi-transparent blur panels */
+#search-panel, #info-panel, #query-bar, #query-result {
+    background: rgba(22, 27, 34, 0.92);
+    backdrop-filter: blur(12px);
+    transition: background 0.2s ease;
+}
+#search-panel:hover, #info-panel:hover, #query-bar:hover, #query-result:hover {
+    background: rgba(22, 27, 34, 0.96);
+}
+#legend {
+    background: rgba(22, 27, 34, 0.88);
+    backdrop-filter: blur(10px);
+}

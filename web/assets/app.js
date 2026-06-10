@@ -97,71 +97,6 @@ async function loadGraph() {
                 runQuery();
                 select.value = "";
 
-// Reliable dropdown trigger after "and " / "or " + space
-const searchBox = document.getElementById("search");
-if (searchBox) {
-    searchBox.addEventListener("input", () => {
-        const dropdown = document.getElementById("example-select");
-        if (!dropdown) return;
-        const val = searchBox.value.toLowerCase();
-        
-        if (val.endsWith(" and ") || val.endsWith(" or ") || 
-            val.endsWith(" & ") || val.endsWith(" | ")) {
-            const term = val.split(/ and | or | & | \| /)[0].trim();
-            if (term.length > 1) {
-                dropdown.innerHTML = `
-                    <option value="">-- Related to "${term}" --</option>
-                    <option value="${term} and hypertension">${term} AND hypertension</option>
-                    <option value="${term} and diabetes">${term} AND diabetes</option>
-                    <option value="${term} and preeclampsia">${term} AND preeclampsia</option>
-                    <option value="${term} or eclampsia">${term} OR eclampsia</option>
-                `;
-            }
-        }
-    });
-}
-
-
-// AND/OR dropdown suggestions
-const si1 = document.getElementById("search");
-if (si) {
-    si.addEventListener("input", () => {
-        const sel1 = document.getElementById("example-select");
-        if (!sel) return;
-        const v = si.value.toLowerCase();
-        if (v.includes(" and ") || v.includes(" or ") || v.includes(" & ") || v.includes(" | ")) {
-            const term = v.split(/ and | or | & | \| /)[0].trim();
-            if (term.length > 1) {
-                sel.innerHTML = `
-                    <option value="">-- Related to "${term}" --</option>
-                    <option value="${term} and hypertension">${term} AND hypertension</option>
-                    <option value="${term} and diabetes">${term} AND diabetes</option>
-                    <option value="${term} and preeclampsia">${term} AND preeclampsia</option>
-                    <option value="${term} or eclampsia">${term} OR eclampsia</option>
-                `;
-            }
-        }
-    });
-}
-
-
-const si2 = document.getElementById("search");
-if (si) {
-    si.addEventListener("input", () => {
-        const sel2 = document.getElementById("example-select");
-        if (!sel) return;
-        const v = si.value.toLowerCase();
-        if (v.includes(" and ") || v.includes(" or ") || v.includes(" & ") || v.includes(" | ")) {
-            const term = v.split(/ and | or | & | \| /)[0].trim();
-            if (term.length > 1) {
-                sel.innerHTML = ` <option value="">-- Related to "${term}" --</option> <option value="${term} and hypertension">${term} AND hypertension</option> <option value="${term} and diabetes">${term} AND diabetes</option> <option value="${term} and preeclampsia">${term} AND preeclampsia</option> <option value="${term} or eclampsia">${term} OR eclampsia</option> `;
-            }
-        }
-    });
-}
-
-
-
 
 
 // Dynamic AND/OR suggestions in dropdown based on search input
@@ -188,6 +123,7 @@ if (searchInput) {
             }
         };
     }
+}
 
         setIndicator('ok', `${graphData.nodes.length} nodes loaded`);
         startSSE();
@@ -915,71 +851,6 @@ function initLegend() {
                 runQuery();
                 select.value = "";
 
-// Reliable dropdown trigger after "and " / "or " + space
-const searchBox = document.getElementById("search");
-if (searchBox) {
-    searchBox.addEventListener("input", () => {
-        const dropdown = document.getElementById("example-select");
-        if (!dropdown) return;
-        const val = searchBox.value.toLowerCase();
-        
-        if (val.endsWith(" and ") || val.endsWith(" or ") || 
-            val.endsWith(" & ") || val.endsWith(" | ")) {
-            const term = val.split(/ and | or | & | \| /)[0].trim();
-            if (term.length > 1) {
-                dropdown.innerHTML = `
-                    <option value="">-- Related to "${term}" --</option>
-                    <option value="${term} and hypertension">${term} AND hypertension</option>
-                    <option value="${term} and diabetes">${term} AND diabetes</option>
-                    <option value="${term} and preeclampsia">${term} AND preeclampsia</option>
-                    <option value="${term} or eclampsia">${term} OR eclampsia</option>
-                `;
-            }
-        }
-    });
-}
-
-
-// AND/OR dropdown suggestions
-const si3 = document.getElementById("search");
-if (si) {
-    si.addEventListener("input", () => {
-        const sel = document.getElementById("example-select");
-        if (!sel) return;
-        const v = si.value.toLowerCase();
-        if (v.includes(" and ") || v.includes(" or ") || v.includes(" & ") || v.includes(" | ")) {
-            const term = v.split(/ and | or | & | \| /)[0].trim();
-            if (term.length > 1) {
-                sel.innerHTML = `
-                    <option value="">-- Related to "${term}" --</option>
-                    <option value="${term} and hypertension">${term} AND hypertension</option>
-                    <option value="${term} and diabetes">${term} AND diabetes</option>
-                    <option value="${term} and preeclampsia">${term} AND preeclampsia</option>
-                    <option value="${term} or eclampsia">${term} OR eclampsia</option>
-                `;
-            }
-        }
-    });
-}
-
-
-const si = document.getElementById("search");
-if (si) {
-    si.addEventListener("input", () => {
-        const sel = document.getElementById("example-select");
-        if (!sel) return;
-        const v = si.value.toLowerCase();
-        if (v.includes(" and ") || v.includes(" or ") || v.includes(" & ") || v.includes(" | ")) {
-            const term = v.split(/ and | or | & | \| /)[0].trim();
-            if (term.length > 1) {
-                sel.innerHTML = ` <option value="">-- Related to "${term}" --</option> <option value="${term} and hypertension">${term} AND hypertension</option> <option value="${term} and diabetes">${term} AND diabetes</option> <option value="${term} and preeclampsia">${term} AND preeclampsia</option> <option value="${term} or eclampsia">${term} OR eclampsia</option> `;
-            }
-        }
-    });
-}
-
-
-
 
 
 // Dynamic AND/OR suggestions in dropdown based on search input
@@ -1006,7 +877,219 @@ if (searchInput) {
             }
         };
     }
+}
 
     // Initial active state
     setTimeout(updateLegendActiveState, 500);
 }
+
+// === DRAGGABLE + POSITION PERSISTENT PANELS (added per user request) ===
+function makeDraggable(panelId, storageKey) {
+    const panel = document.getElementById(panelId);
+    if (!panel) return;
+
+    let isDragging = false;
+    let startX, startY, startLeft, startTop;
+
+    // Restore saved position
+    const saved = localStorage.getItem(storageKey);
+    if (saved) {
+        try {
+            const pos = JSON.parse(saved);
+            panel.style.left = pos.left;
+            panel.style.top = pos.top;
+            panel.style.right = 'auto';
+            panel.style.bottom = 'auto';
+        } catch(e) {}
+    }
+
+    const header = panel.querySelector('.panel-header') || panel;
+
+    header.style.cursor = 'move';
+    header.addEventListener('mousedown', (e) => {
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'BUTTON' || e.target.tagName === 'SELECT') return;
+        isDragging = true;
+        startX = e.clientX;
+        startY = e.clientY;
+        startLeft = panel.offsetLeft;
+        startTop = panel.offsetTop;
+        document.body.style.userSelect = 'none';
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        const dx = e.clientX - startX;
+        const dy = e.clientY - startY;
+        panel.style.left = (startLeft + dx) + 'px';
+        panel.style.top = (startTop + dy) + 'px';
+        panel.style.right = 'auto';
+        panel.style.bottom = 'auto';
+    });
+
+    document.addEventListener('mouseup', () => {
+        if (!isDragging) return;
+        isDragging = false;
+        document.body.style.userSelect = '';
+        // Save position
+        const pos = { left: panel.style.left, top: panel.style.top };
+        localStorage.setItem(storageKey, JSON.stringify(pos));
+    });
+}
+
+// Make all main panels draggable with position memory
+function initDraggablePanels() {
+    makeDraggable('search-panel', 'search-panel-pos');
+    makeDraggable('info-panel', 'info-panel-pos');
+    makeDraggable('query-bar', 'query-bar-pos');
+    makeDraggable('query-result', 'query-result-pos');
+    makeDraggable('legend', 'legend-pos');
+}
+
+// Call after DOM ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initDraggablePanels);
+} else {
+    initDraggablePanels();
+}
+
+// === RESIZABLE PANELS ===
+function makeResizable(panelId, storageKey) {
+    const panel = document.getElementById(panelId);
+    if (!panel) return;
+
+    panel.style.resize = 'both';
+    panel.style.overflow = 'auto';
+    panel.style.minWidth = '280px';
+    panel.style.minHeight = '120px';
+    panel.style.maxWidth = '600px';
+    panel.style.maxHeight = '80vh';
+
+    // Restore size if saved
+    const savedSize = localStorage.getItem(storageKey + '-size');
+    if (savedSize) {
+        try {
+            const size = JSON.parse(savedSize);
+            if (size.width) panel.style.width = size.width;
+            if (size.height) panel.style.height = size.height;
+        } catch(e) {}
+    }
+
+    // Save size on resize end
+    let resizeTimer;
+    const observer = new ResizeObserver(() => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            const size = { width: panel.style.width, height: panel.style.height };
+            localStorage.setItem(storageKey + '-size', JSON.stringify(size));
+        }, 300);
+    });
+    observer.observe(panel);
+}
+
+function initResizablePanels() {
+    ['search-panel', 'info-panel', 'query-bar', 'query-result', 'legend'].forEach(id => {
+        makeResizable(id, id + '-size');
+    });
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initResizablePanels);
+} else {
+    initResizablePanels();
+}
+
+// === INTERACTIVE LEGEND + MULTI-SELECT FILTERS ===
+let activeTypeFilters = new Set(['all']);
+
+function toggleLegendType(type) {
+    const legendItems = document.querySelectorAll('#legend .legend-item');
+    
+    if (type === 'all' || activeTypeFilters.has('all')) {
+        activeTypeFilters.clear();
+        activeTypeFilters.add(type);
+    } else if (activeTypeFilters.has(type)) {
+        activeTypeFilters.delete(type);
+        if (activeTypeFilters.size === 0) activeTypeFilters.add('all');
+    } else {
+        activeTypeFilters.add(type);
+        activeTypeFilters.delete('all');
+    }
+
+    // Update visual active state
+    legendItems.forEach(item => {
+        const t = item.dataset.type;
+        if (activeTypeFilters.has('all') || activeTypeFilters.has(t)) {
+            item.style.opacity = '1';
+            item.style.border = '1px solid #58a6ff';
+        } else {
+            item.style.opacity = '0.4';
+            item.style.border = 'none';
+        }
+    });
+
+    // Apply filter to network
+    applyTypeFilters();
+}
+
+function applyTypeFilters() {
+    if (!nodesDataset) return;
+
+    const showAll = activeTypeFilters.has('all');
+    nodesDataset.forEach(node => {
+        const nodeType = node.group || node.type || 'default';
+        const visible = showAll || activeTypeFilters.has(nodeType);
+        nodesDataset.update({id: node.id, hidden: !visible});
+    });
+}
+
+function updateLegendActiveState() {
+    const items = document.querySelectorAll('#legend .legend-item');
+    items.forEach(item => {
+        item.style.transition = 'opacity 0.15s, border 0.15s';
+    });
+}
+
+// === ESC TO DISMISS + QUERY PANEL UX ===
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        const info = document.getElementById('info-panel');
+        const queryRes = document.getElementById('query-result');
+        if (info && info.style.display !== 'none') {
+            info.style.display = 'none';
+        } else if (queryRes && queryRes.style.display !== 'none') {
+            queryRes.style.display = 'none';
+        } else {
+            // collapse legend if open
+            const legend = document.getElementById('legend');
+            if (legend && !legend.classList.contains('collapsed')) {
+                legend.classList.add('collapsed');
+            }
+        }
+    }
+});
+
+// Improve query result panel visibility
+function showQueryResult(html) {
+    const container = document.getElementById('query-result');
+    if (!container) return;
+    container.innerHTML = html;
+    container.style.display = 'block';
+    // Auto-save position handled by draggable
+}
+
+// === FINAL INIT HOOK ===
+function initAllUIEnhancements() {
+    // These are already called via DOMContentLoaded above, but ensure after graph load
+    setTimeout(() => {
+        if (typeof initDraggablePanels === 'function') initDraggablePanels();
+        if (typeof initResizablePanels === 'function') initResizablePanels();
+        if (typeof updateLegendActiveState === 'function') updateLegendActiveState();
+    }, 800);
+}
+
+// Hook into existing load
+const origLoad = window.loadGraph || function(){};
+window.loadGraph = function() {
+    origLoad();
+    setTimeout(initAllUIEnhancements, 1200);
+};

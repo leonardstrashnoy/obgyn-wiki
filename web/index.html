@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OB/GYN Semantic Network</title>
-<link rel="stylesheet" href="assets/components.css">
+<link rel="stylesheet" href="assets/app.css">
 <script src="assets/vis-network.min.js"></script>
 <style>
 
@@ -69,7 +69,7 @@ body {
 /* ── Info Panel (right) ──────────────────────────── */
 #info-panel {
     position: fixed;
-    top: 20px;
+    top: 12px;
     right: 20px;
     width: 420px;
     max-height: calc(100vh - 160px);
@@ -183,7 +183,7 @@ body {
 /* ── Search Panel (top-left) ───────────────────── */
 #search-panel {
     position: fixed;
-    top: 20px;
+    top: 12px;
     left: 20px;
     z-index: 100;
     background: var(--panel);
@@ -323,7 +323,7 @@ body {
 /* ── Toggle button ───────────────────────────────── */
 #toggle-btn {
     position: fixed;
-    top: 20px;
+    top: 12px;
     right: 20px;
     z-index: 101;
     background: var(--panel-header);
@@ -657,6 +657,14 @@ button:active, .chip:active {
     </div>
 </div>
 
+
+<button onclick="window.open('assets/help.html', '_blank')" 
+        style="position:fixed; top:20px; right:460px; z-index:110; 
+               background:#21262d; border:1px solid #484f58; color:#8b949e;
+               padding:6px 12px; border-radius:6px; cursor:pointer; font-size:13px;">
+    Help
+</button>
+
 <div id="info-panel" class="panel"><div style="padding:16px; color:#8b949e; font-size:14px;">Click a node to see details</div></div>
 
 <div id="network"></div>
@@ -704,7 +712,7 @@ button:active, .chip:active {
     <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
         <span style="color:#8b949e; font-size:var(--text-sm);">Ask the wiki:</span>
     </div>
-    <div style="margin-bottom:8px;">
+    <div style="margin-bottom:12px;">
         <select id="example-select" style="width:100%; background:var(--panel-header); color:var(--text); border:1px solid var(--border); border-radius:var(--radius-sm); padding:6px 10px; font-size:var(--text-sm);">
             <option value="">-- Example questions --</option>
             <option value="risk factors for preeclampsia">Risk factors for preeclampsia</option>
@@ -725,6 +733,6 @@ button:active, .chip:active {
 </div>
 <div id="query-result" class="panel"></div>
 
-<script src="assets/assets/app.js"></script>
+<script src="assets/app.js"></script>
 </body>
 </html>
