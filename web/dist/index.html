@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OB/GYN Semantic Network</title>
+<script src="vis-network.min.js"></script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+    background: #0a0c10;
+    color: #e6edf3;
+    overflow: hidden;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* ── Network canvas ─────────────────────────────── */
+#network {
+    width: 100vw;
+    height: 100vh;
+    background: #0a0c10;
+}
+
+/* ── Info Panel (right) ──────────────────────────── */
+#info-panel {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 420px;
+    max-height: calc(100vh - 160px);
+    background: #161b22;
+    border: 1px solid #484f58;
+    border-radius: 10px;
+    padding: 20px;
+    overflow-y: auto;
+    z-index: 100;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+    transition: transform 0.3s ease;
+    font-size: 15px;
+}
+#info-panel.collapsed { transform: translateX(calc(100% + 40px)); }
+#info-panel h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    color: #79c0ff;
+    letter-spacing: -0.3px;
+}
+#info-panel .section { margin-bottom: 16px; }
+#info-panel .section-title {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #8b949e;
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #30363d;
+}
+#info-panel .badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    background: #21262d;
+    color: #e6edf3;
+    margin-right: 6px;
+    margin-bottom: 6px;
+    border: 1px solid #30363d;
+}
+#info-panel .badge.evidence-1a { background: #238636; color: #fff; border-color: #238636; }
+#info-panel .badge.evidence-1b { background: #1a7f37; color: #fff; border-color: #1a7f37; }
+#info-panel .badge.evidence-2a { background: #3fb950; color: #fff; border-color: #3fb950; }
+#info-panel .badge.evidence-2b { background: #8957e5; color: #fff; border-color: #8957e5; }
+#info-panel .badge.evidence-2c { background: #6e7681; color: #fff; border-color: #6e7681; }
+#info-panel .badge.risk { background: #da3633; color: #fff; border-color: #da3633; }
+#info-panel .badge.drug { background: #0969da; color: #fff; border-color: #0969da; }
+#info-panel .badge.procedure { background: #bc8cff; color: #0a0c10; border-color: #bc8cff; }
+#info-panel .badge.condition { background: #58a6ff; color: #0a0c10; border-color: #58a6ff; }
+#info-panel .badge.mechanism { background: #f0883e; color: #0a0c10; border-color: #f0883e; }
+#info-panel .badge.symptom { background: #ff7b72; color: #0a0c10; border-color: #ff7b72; }
+
+#info-panel .edge-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 8px 0;
+    border-bottom: 1px solid #21262d;
+    font-size: 14px;
+}
+#info-panel .edge-row:last-child { border-bottom: none; }
+#info-panel .edge-label {
+    color: #e6edf3;
+    flex: 1;
+    padding-right: 10px;
+    line-height: 1.4;
+}
+#info-panel .edge-evidence {
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+#info-panel .btn-expand {
+    display: block;
+    width: 100%;
+    margin-top: 14px;
+    padding: 10px 14px;
+    background: #1f6feb;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.15s;
+}
+#info-panel .btn-expand:hover { background: #388bfd; }
+#info-panel .btn-expand:disabled {
+    background: #21262d;
+    color: #8b949e;
+    cursor: not-allowed;
+}
+#info-panel .wiki-link {
+    color: #79c0ff;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 500;
+}
+#info-panel .wiki-link:hover { text-decoration: underline; }
+#info-panel .no-conn {
+    color: #8b949e;
+    font-size: 14px;
+    padding: 8px 0;
+}
+
+/* ── Search Panel (top-left) ───────────────────── */
+#search-panel {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+    background: #161b22;
+    border: 1px solid #484f58;
+    border-radius: 10px;
+    padding: 16px;
+    min-width: 300px;
+    max-width: 380px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+}
+#search-panel input {
+    width: 100%;
+    padding: 10px 14px;
+    background: #0a0c10;
+    border: 1px solid #484f58;
+    border-radius: 8px;
+    color: #e6edf3;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.15s;
+}
+#search-panel input:focus { border-color: #58a6ff; }
+#search-panel input::placeholder { color: #6e7681; }
+#search-panel .filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+#search-panel .filter-btn {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid #484f58;
+    background: #21262d;
+    color: #8b949e;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.15s;
+}
+#search-panel .filter-btn:hover { border-color: #8b949e; color: #e6edf3; }
+#search-panel .filter-btn.active {
+    background: #58a6ff;
+    color: #0a0c10;
+    border-color: #58a6ff;
+    font-weight: 700;
+}
+#search-panel .stats-row {
+    margin-top: 12px;
+    font-size: 13px;
+    color: #8b949e;
+    display: flex;
+    gap: 20px;
+    font-weight: 500;
+}
+#search-panel .stats-row b { color: #e6edf3; }
+#search-panel .indicator {
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+#search-panel .indicator .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+#search-panel .indicator.connected { color: #3fb950; }
+#search-panel .indicator.disconnected { color: #da3633; }
+
+/* ── Legend (bottom-left) ────────────────────────── */
+#legend {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #161b22;
+    border: 1px solid #484f58;
+    border-radius: 10px;
+    padding: 14px 16px;
+    z-index: 100;
+    font-size: 13px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+#legend .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+#legend .legend-item:last-child { margin-bottom: 0; }
+#legend .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* ── Toggle button ───────────────────────────────── */
+#toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 101;
+    background: #21262d;
+    border: 1px solid #484f58;
+    border-radius: 8px;
+    padding: 8px 14px;
+    color: #e6edf3;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background 0.15s;
+}
+#toggle-btn:hover { background: #30363d; }
+
+/* ── Query Bar (bottom-right) ────────────────────── */
+#query-bar {
+    position: fixed;
+    bottom: 54px;
+    right: 20px;
+    width: 420px;
+    background: #161b22;
+    border: 1px solid #484f58;
+    border-radius: 10px;
+    padding: 12px 14px;
+    z-index: 100;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+#query-bar input {
+    flex: 1;
+    padding: 10px 14px;
+    background: #0a0c10;
+    border: 1px solid #484f58;
+    border-radius: 8px;
+    color: #e6edf3;
+    font-size: 15px;
+    outline: none;
+}
+#query-bar input:focus { border-color: #58a6ff; }
+#query-bar input::placeholder { color: #6e7681; }
+#query-bar button {
+    padding: 10px 16px;
+    background: #238636;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+    white-space: nowrap;
+}
+#query-bar button:hover { background: #2ea043; }
+
+#query-result {
+    position: fixed;
+    bottom: 118px;
+    right: 20px;
+    width: 420px;
+    background: #161b22;
+    border: 1px solid #484f58;
+    border-radius: 10px;
+    padding: 16px;
+    z-index: 100;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+    max-height: 420px;
+    overflow-y: auto;
+    font-size: 14px;
+    display: none;
+}
+#query-result pre {
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #c9d1d9;
+}
+
+/* ── Scrollbar styling ───────────────────────────── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #484f58; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #6e7681; }
+</style>
+</head>
+<body>
+<script>window._STATIC_MODE=true;</script>
+
+<button id="toggle-btn" onclick="togglePanel()">Toggle Panel</button>
+
+<div id="search-panel">
+    <input id="search" type="text" placeholder="Search nodes..." oninput="filterNodes(this.value)">
+    <div class="filter-row">
+        <button class="filter-btn active" onclick="setFilter('all')" data-type="all">All</button>
+        <button class="filter-btn" onclick="setFilter('condition')" data-type="condition">Conditions</button>
+        <button class="filter-btn" onclick="setFilter('drug')" data-type="drug">Drugs</button>
+        <button class="filter-btn" onclick="setFilter('procedure')" data-type="procedure">Procedures</button>
+        <button class="filter-btn" onclick="setFilter('symptom')" data-type="symptom">Symptoms</button>
+        <button class="filter-btn" onclick="setFilter('risk_factor')" data-type="risk_factor">Risks</button>
+        <button class="filter-btn" onclick="setFilter('mechanism')" data-type="mechanism">Mechanisms</button>
+    </div>
+    <div class="stats-row">
+        <span>Nodes: <b id="node-count">0</b></span>
+        <span>Edges: <b id="edge-count">0</b></span>
+        <span>Visible: <b id="visible-count">0</b></span>
+    </div>
+    <div class="indicator" id="conn-indicator">
+        <span class="dot" style="background:#6e7681"></span>checking API...
+    </div>
+</div>
+
+<div id="info-panel"></div>
+
+<div id="network"></div>
+
+<div id="legend">
+    <div class="legend-item"><div class="dot" style="background:#58a6ff"></div>Condition</div>
+    <div class="legend-item"><div class="dot" style="background:#0969da"></div>Drug</div>
+    <div class="legend-item"><div class="dot" style="background:#bc8cff"></div>Procedure</div>
+    <div class="legend-item"><div class="dot" style="background:#ff7b72"></div>Symptom</div>
+    <div class="legend-item"><div class="dot" style="background:#da3633"></div>Risk Factor</div>
+    <div class="legend-item"><div class="dot" style="background:#f0883e"></div>Mechanism</div>
+</div>
+
+<div id="query-bar">
+    <input id="query-input" type="text" placeholder="Ask the wiki (e.g. 'risk factors for preeclampsia')...">
+    <button onclick="runQuery()">Ask</button>
+</div>
+<div id="query-result"></div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

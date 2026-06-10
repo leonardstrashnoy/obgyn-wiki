@@ -1,0 +1,2930 @@
+{
+  "nodes": [
+    {
+      "id": "abdominal_pain",
+      "label": "Abdominal Pain",
+      "group": "symptom",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "ultrasound_abd",
+      "label": "Abdominal Ultrasound",
+      "group": "procedure",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "trophoblast_invasion",
+      "label": "Abnormal Trophoblast Invasion",
+      "group": "mechanism",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "abnormal_uterine_bleeding",
+      "label": "Abnormal Uterine Bleeding",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/abnormal-uterine-bleeding.md",
+      "mesh": null
+    },
+    {
+      "id": "adenomyosis",
+      "label": "Adenomyosis",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/adenomyosis.md",
+      "mesh": null
+    },
+    {
+      "id": "adrenal_insufficiency",
+      "label": "Adrenal Insufficiency",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/adrenal-insufficiency.md",
+      "mesh": null
+    },
+    {
+      "id": "advanced_maternal_age",
+      "label": "Advanced Maternal Age",
+      "group": "risk_factor",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "amenorrhea",
+      "label": "Amenorrhea",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/amenorrhea.md",
+      "mesh": null
+    },
+    {
+      "id": "amniocentesis",
+      "label": "Amniocentesis",
+      "group": "procedure",
+      "canonical": true,
+      "page": "procedures/amniocentesis.md",
+      "mesh": null
+    },
+    {
+      "id": "amniotic_fluid",
+      "label": "Amniotic Fluid Disorders",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/amniotic-fluid.md",
+      "mesh": null
+    },
+    {
+      "id": "amniotic_fluid_embolism",
+      "label": "Amniotic Fluid Embolism (AFE)",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/amniotic-fluid-embolism.md",
+      "mesh": null
+    },
+    {
+      "id": "angiogenic_imbalance",
+      "label": "Angiogenic Imbalance",
+      "group": "mechanism",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "fetal_surveillance",
+      "label": "Antepartum Fetal Surveillance",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/fetal-surveillance.md",
+      "mesh": null
+    },
+    {
+      "id": "bacterial_vaginosis",
+      "label": "Bacterial Vaginosis",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/bacterial-vaginosis.md",
+      "mesh": null
+    },
+    {
+      "id": "beta_hcg",
+      "label": "Beta-hCG (\u03b2-hCG)",
+      "group": "drug",
+      "canonical": true,
+      "page": "drugs/beta-hcg.md",
+      "mesh": null
+    },
+    {
+      "id": "betamethasone",
+      "label": "Betamethasone",
+      "group": "drug",
+      "canonical": true,
+      "page": "drugs/betamethasone.md",
+      "mesh": null
+    },
+    {
+      "id": "biophysical_profile",
+      "label": "Biophysical Profile",
+      "group": "concept",
+      "canonical": true,
+      "page": "concepts/biophysical-profile.md",
+      "mesh": null
+    },
+    {
+      "id": "blood_transfusion",
+      "label": "Blood Transfusion in Obstetrics",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/blood-transfusion.md",
+      "mesh": null
+    },
+    {
+      "id": "breast_cancer",
+      "label": "Breast Cancer",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/breast-cancer.md",
+      "mesh": null
+    },
+    {
+      "id": "carboprost",
+      "label": "Carboprost Tromethamine",
+      "group": "drug",
+      "canonical": true,
+      "page": "drugs/carboprost.md",
+      "mesh": null
+    },
+    {
+      "id": "cardiovascular_disease",
+      "label": "Cardiovascular Disease",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/cardiovascular-disease.md",
+      "mesh": null
+    },
+    {
+      "id": "cardiovascular_disease_in_pregnancy",
+      "label": "Cardiovascular Disease in Pregnancy",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/cardiovascular-disease-in-pregnancy.md",
+      "mesh": null
+    },
+    {
+      "id": "cfDNA_testing",
+      "label": "Cell-Free DNA (cfDNA) Testing / NIPT",
+      "group": "concept",
+      "canonical": true,
+      "page": "concepts/cfDNA-testing.md",
+      "mesh": null
+    },
+    {
+      "id": "cerebral_palsy",
+      "label": "Cerebral Palsy",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/cerebral-palsy.md",
+      "mesh": null
+    },
+    {
+      "id": "cervical_cerclage",
+      "label": "Cervical Cerclage",
+      "group": "procedure",
+      "canonical": true,
+      "page": "procedures/cervical-cerclage.md",
+      "mesh": null
+    },
+    {
+      "id": "cervical_dysplasia",
+      "label": "Cervical Dysplasia",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/cervical-dysplasia.md",
+      "mesh": null
+    },
+    {
+      "id": "cervical_incompetence",
+      "label": "Cervical Incompetence",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/cervical-incompetence.md",
+      "mesh": null
+    },
+    {
+      "id": "cervical_incompetence_cond",
+      "label": "Cervical Incompetence",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/cervical-incompetence.md",
+      "mesh": "D002582"
+    },
+    {
+      "id": "cervical_length",
+      "label": "Cervical Length Measurement",
+      "group": "procedure",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "cesarean_delivery",
+      "label": "Cesarean Delivery",
+      "group": "procedure",
+      "canonical": true,
+      "page": "procedures/cesarean-delivery.md",
+      "mesh": null
+    },
+    {
+      "id": "chlamydia",
+      "label": "Chlamydia trachomatis Infection",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/chlamydia.md",
+      "mesh": null
+    },
+    {
+      "id": "chorioamnionitis",
+      "label": "Chorioamnionitis",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/chorioamnionitis.md",
+      "mesh": "D002818"
+    },
+    {
+      "id": "choriocarcinoma",
+      "label": "Choriocarcinoma",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/choriocarcinoma.md",
+      "mesh": null
+    },
+    {
+      "id": "chorionic_villus_sampling",
+      "label": "Chorionic Villus Sampling",
+      "group": "procedure",
+      "canonical": true,
+      "page": "procedures/chorionic-villus-sampling.md",
+      "mesh": null
+    },
+    {
+      "id": "chronic_hypertension",
+      "label": "Chronic Hypertension in Pregnancy",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/chronic-hypertension.md",
+      "mesh": null
+    },
+    {
+      "id": "chronic_pelvic_pain",
+      "label": "Chronic Pelvic Pain",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/chronic-pelvic-pain.md",
+      "mesh": null
+    },
+    {
+      "id": "coagulopathy_mechanism",
+      "label": "Coagulopathy",
+      "group": "mechanism",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "coagulopathy",
+      "label": "Coagulopathy in Obstetrics",
+      "group": "mechanism",
+      "canonical": true,
+      "page": "mechanisms/coagulopathy.md",
+      "mesh": null
+    },
+    {
+      "id": "cocaine_use",
+      "label": "Cocaine Use",
+      "group": "risk_factor",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "condom",
+      "label": "Condom",
+      "group": "concept",
+      "canonical": true,
+      "page": "concepts/condom.md",
+      "mesh": null
+    },
+    {
+      "id": "contraception",
+      "label": "Contraception",
+      "group": "concept",
+      "canonical": true,
+      "page": "concepts/contraception.md",
+      "mesh": null
+    },
+    {
+      "id": "corticosteroids",
+      "label": "Corticosteroids",
+      "group": "drug",
+      "canonical": true,
+      "page": "drugs/corticosteroids.md",
+      "mesh": null
+    },
+    {
+      "id": "diabetes_mellitus",
+      "label": "Diabetes Mellitus",
+      "group": "risk_factor",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "dilation_curettage",
+      "label": "Dilation and Curettage",
+      "group": "procedure",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "disseminated_intravascular_coagulation",
+      "label": "Disseminated Intravascular Coagulation (DIC)",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/disseminated-intravascular-coagulation.md",
+      "mesh": null
+    },
+    {
+      "id": "doppler_ultrasound",
+      "label": "Doppler Ultrasound",
+      "group": "procedure",
+      "canonical": true,
+      "page": "procedures/doppler-ultrasound.md",
+      "mesh": null
+    },
+    {
+      "id": "doppler_velocimetry",
+      "label": "Doppler Velocimetry in Obstetrics",
+      "group": "concept",
+      "canonical": true,
+      "page": "concepts/doppler-velocimetry.md",
+      "mesh": null
+    },
+    {
+      "id": "ductus_venosus",
+      "label": "Ductus Venosus",
+      "group": "mechanism",
+      "canonical": true,
+      "page": "mechanisms/ductus-venosus.md",
+      "mesh": null
+    },
+    {
+      "id": "dysmenorrhea",
+      "label": "Dysmenorrhea",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/dysmenorrhea.md",
+      "mesh": null
+    },
+    {
+      "id": "early_onset_neonatal_sepsis",
+      "label": "Early-Onset Neonatal Sepsis",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/early-onset-neonatal-sepsis.md",
+      "mesh": null
+    },
+    {
+      "id": "eclampsia",
+      "label": "Eclampsia",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/eclampsia.md",
+      "mesh": null
+    },
+    {
+      "id": "ectopic_pregnancy",
+      "label": "Ectopic Pregnancy",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/ectopic-pregnancy.md",
+      "mesh": "D011248"
+    },
+    {
+      "id": "edema",
+      "label": "Edema",
+      "group": "symptom",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "elevated_liver_enzymes",
+      "label": "Elevated Liver Enzymes",
+      "group": "symptom",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "endometrial_cancer",
+      "label": "Endometrial Cancer",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/endometrial-cancer.md",
+      "mesh": null
+    },
+    {
+      "id": "endometrial_hyperplasia",
+      "label": "Endometrial Hyperplasia",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/endometrial-hyperplasia.md",
+      "mesh": null
+    },
+    {
+      "id": "endometriosis",
+      "label": "Endometriosis",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/endometriosis.md",
+      "mesh": null
+    },
+    {
+      "id": "endothelial_dysfunction",
+      "label": "Endothelial Dysfunction",
+      "group": "mechanism",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "fetal_anomalies",
+      "label": "Fetal Anomalies",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/fetal-anomalies.md",
+      "mesh": null
+    },
+    {
+      "id": "fetal_distress",
+      "label": "Fetal Distress",
+      "group": "mechanism",
+      "canonical": true,
+      "page": "mechanisms/fetal-distress.md",
+      "mesh": null
+    },
+    {
+      "id": "fetal_fibronectin",
+      "label": "Fetal Fibronectin Test",
+      "group": "procedure",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "fetal_growth_restriction",
+      "label": "Fetal Growth Restriction",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/fetal-growth-restriction.md",
+      "mesh": "D005316"
+    },
+    {
+      "id": "fetal_lung_maturity",
+      "label": "Fetal Lung Maturity (FLM)",
+      "group": "concept",
+      "canonical": true,
+      "page": "concepts/fetal-lung-maturity.md",
+      "mesh": null
+    },
+    {
+      "id": "macrosomia",
+      "label": "Fetal Macrosomia",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/macrosomia.md",
+      "mesh": null
+    },
+    {
+      "id": "fever",
+      "label": "Fever",
+      "group": "symptom",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "first_trimester_screening",
+      "label": "First Trimester Screening",
+      "group": "concept",
+      "canonical": true,
+      "page": "concepts/first-trimester-screening.md",
+      "mesh": null
+    },
+    {
+      "id": "gestational_diabetes",
+      "label": "Gestational Diabetes",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/gestational-diabetes.md",
+      "mesh": "D016640"
+    },
+    {
+      "id": "gestational_diabetes_mellitus",
+      "label": "Gestational Diabetes Mellitus (GDM)",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/gestational-diabetes-mellitus.md",
+      "mesh": null
+    },
+    {
+      "id": "gestational_trophoblastic_disease",
+      "label": "Gestational Trophoblastic Disease (GTD)",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/gestational-trophoblastic-disease.md",
+      "mesh": null
+    },
+    {
+      "id": "gitelman_syndrome",
+      "label": "Gitelman Syndrome",
+      "group": "risk_factor",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "glyburide",
+      "label": "Glyburide",
+      "group": "drug",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "group_b_streptococcus",
+      "label": "Group B Streptococcus (GBS)",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/group-b-streptococcus.md",
+      "mesh": null
+    },
+    {
+      "id": "hpv_screening",
+      "label": "HPV Screening",
+      "group": "concept",
+      "canonical": true,
+      "page": "concepts/hpv-screening.md",
+      "mesh": null
+    },
+    {
+      "id": "headache",
+      "label": "Headache",
+      "group": "symptom",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "hemorrhage",
+      "label": "Hemorrhage",
+      "group": "symptom",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "history_preeclampsia",
+      "label": "History of Preeclampsia",
+      "group": "risk_factor",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "hormone_replacement_therapy",
+      "label": "Hormone Replacement Therapy",
+      "group": "concept",
+      "canonical": true,
+      "page": "concepts/hormone-replacement-therapy.md",
+      "mesh": null
+    },
+    {
+      "id": "hypertension",
+      "label": "Hypertension",
+      "group": "symptom",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "hypertensive_disorders_of_pregnancy",
+      "label": "Hypertensive Disorders of Pregnancy",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/hypertensive-disorders-of-pregnancy.md",
+      "mesh": null
+    },
+    {
+      "id": "hypopituitarism",
+      "label": "Hypopituitarism",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/hypopituitarism.md",
+      "mesh": null
+    },
+    {
+      "id": "hypothyroidism",
+      "label": "Hypothyroidism",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/hypothyroidism.md",
+      "mesh": null
+    },
+    {
+      "id": "hysterectomy",
+      "label": "Hysterectomy",
+      "group": "procedure",
+      "canonical": true,
+      "page": "procedures/hysterectomy.md",
+      "mesh": null
+    },
+    {
+      "id": "IVF",
+      "label": "In Vitro Fertilization (IVF)",
+      "group": "concept",
+      "canonical": true,
+      "page": "concepts/IVF.md",
+      "mesh": null
+    },
+    {
+      "id": "spiral_artery_remodeling",
+      "label": "Incomplete Spiral Artery Remodeling",
+      "group": "mechanism",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "indomethacin",
+      "label": "Indomethacin",
+      "group": "drug",
+      "canonical": true,
+      "page": "drugs/indomethacin.md",
+      "mesh": null
+    },
+    {
+      "id": "induction_of_labor",
+      "label": "Induction of Labor",
+      "group": "concept",
+      "canonical": true,
+      "page": "concepts/induction-of-labor.md",
+      "mesh": null
+    },
+    {
+      "id": "infertility",
+      "label": "Infertility",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/infertility.md",
+      "mesh": null
+    },
+    {
+      "id": "insulin",
+      "label": "Insulin",
+      "group": "drug",
+      "canonical": true,
+      "page": "drugs/insulin.md",
+      "mesh": null
+    },
+    {
+      "id": "intrauterine_device",
+      "label": "Intrauterine Device",
+      "group": "procedure",
+      "canonical": true,
+      "page": "procedures/intrauterine-device.md",
+      "mesh": null
+    },
+    {
+      "id": "iron_deficiency",
+      "label": "Iron Deficiency",
+      "group": "mechanism",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "labetalol",
+      "label": "Labetalol",
+      "group": "drug",
+      "canonical": true,
+      "page": "drugs/labetalol.md",
+      "mesh": null
+    },
+    {
+      "id": "laceration_repair",
+      "label": "Laceration Repair",
+      "group": "procedure",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "laparoscopy",
+      "label": "Laparoscopy",
+      "group": "procedure",
+      "canonical": true,
+      "page": "procedures/laparoscopy.md",
+      "mesh": null
+    },
+    {
+      "id": "leiomyomas",
+      "label": "Leiomyomas (Uterine Fibroids)",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/leiomyomas.md",
+      "mesh": null
+    },
+    {
+      "id": "levonorgestrel",
+      "label": "Levonorgestrel",
+      "group": "drug",
+      "canonical": true,
+      "page": "drugs/levonorgestrel.md",
+      "mesh": null
+    },
+    {
+      "id": "low_papp_a",
+      "label": "Low PAPP-A",
+      "group": "risk_factor",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "low_dose_aspirin",
+      "label": "Low-Dose Aspirin",
+      "group": "drug",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "magnesium_sulfate",
+      "label": "Magnesium Sulfate",
+      "group": "drug",
+      "canonical": true,
+      "page": "drugs/magnesium-sulfate.md",
+      "mesh": null
+    },
+    {
+      "id": "maternal_mortality",
+      "label": "Maternal Mortality",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/maternal-mortality.md",
+      "mesh": null
+    },
+    {
+      "id": "medical_abortion",
+      "label": "Medical Abortion",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/medical-abortion.md",
+      "mesh": null
+    },
+    {
+      "id": "menopause",
+      "label": "Menopause",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/menopause.md",
+      "mesh": null
+    },
+    {
+      "id": "mental_health_in_pregnancy",
+      "label": "Mental Health in Pregnancy",
+      "group": "concept",
+      "canonical": true,
+      "page": "concepts/mental-health-in-pregnancy.md",
+      "mesh": null
+    },
+    {
+      "id": "metformin",
+      "label": "Metformin",
+      "group": "drug",
+      "canonical": true,
+      "page": "drugs/metformin.md",
+      "mesh": null
+    },
+    {
+      "id": "methotrexate",
+      "label": "Methotrexate",
+      "group": "drug",
+      "canonical": true,
+      "page": "drugs/methotrexate.md",
+      "mesh": null
+    },
+    {
+      "id": "methyldopa",
+      "label": "Methyldopa",
+      "group": "drug",
+      "canonical": true,
+      "page": "drugs/methyldopa.md",
+      "mesh": null
+    },
+    {
+      "id": "methylergonovine",
+      "label": "Methylergonovine",
+      "group": "drug",
+      "canonical": true,
+      "page": "drugs/methylergonovine.md",
+      "mesh": null
+    },
+    {
+      "id": "mifepristone",
+      "label": "Mifepristone",
+      "group": "drug",
+      "canonical": true,
+      "page": "drugs/mifepristone.md",
+      "mesh": null
+    },
+    {
+      "id": "misoprostol",
+      "label": "Misoprostol",
+      "group": "drug",
+      "canonical": true,
+      "page": "drugs/misoprostol.md",
+      "mesh": null
+    },
+    {
+      "id": "multiple_pregnancy",
+      "label": "Multiple Pregnancy",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/multiple-pregnancy.md",
+      "mesh": null
+    },
+    {
+      "id": "gonorrhea",
+      "label": "Neisseria gonorrhoeae Infection",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/gonorrhea.md",
+      "mesh": null
+    },
+    {
+      "id": "nifedipine",
+      "label": "Nifedipine",
+      "group": "drug",
+      "canonical": true,
+      "page": "drugs/nifedipine.md",
+      "mesh": null
+    },
+    {
+      "id": "nonstress_test",
+      "label": "Nonstress Test",
+      "group": "procedure",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "nuchal_translucency",
+      "label": "Nuchal Translucency",
+      "group": "procedure",
+      "canonical": true,
+      "page": "procedures/nuchal-translucency.md",
+      "mesh": null
+    },
+    {
+      "id": "obesity",
+      "label": "Obesity",
+      "group": "risk_factor",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "oligohydramnios",
+      "label": "Oligohydramnios",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/oligohydramnios.md",
+      "mesh": null
+    },
+    {
+      "id": "osteoporosis",
+      "label": "Osteoporosis",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/osteoporosis.md",
+      "mesh": null
+    },
+    {
+      "id": "ovarian_cancer",
+      "label": "Ovarian Cancer",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/ovarian-cancer.md",
+      "mesh": null
+    },
+    {
+      "id": "ovarian_cysts",
+      "label": "Ovarian Cysts",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/ovarian-cysts.md",
+      "mesh": null
+    },
+    {
+      "id": "ovarian_hyperstimulation_syndrome",
+      "label": "Ovarian Hyperstimulation Syndrome",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/ovarian-hyperstimulation-syndrome.md",
+      "mesh": null
+    },
+    {
+      "id": "ovarian_torsion",
+      "label": "Ovarian Torsion",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/ovarian-torsion.md",
+      "mesh": null
+    },
+    {
+      "id": "oxytocin",
+      "label": "Oxytocin",
+      "group": "drug",
+      "canonical": true,
+      "page": "drugs/oxytocin.md",
+      "mesh": null
+    },
+    {
+      "id": "pelvic_inflammatory_disease",
+      "label": "Pelvic Inflammatory Disease (PID)",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/pelvic-inflammatory-disease.md",
+      "mesh": null
+    },
+    {
+      "id": "pelvic_organ_prolapse",
+      "label": "Pelvic Organ Prolapse",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/pelvic-organ-prolapse.md",
+      "mesh": null
+    },
+    {
+      "id": "placenta_accreta_spectrum",
+      "label": "Placenta Accreta Spectrum (PAS)",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/placenta-accreta-spectrum.md",
+      "mesh": null
+    },
+    {
+      "id": "placenta_previa",
+      "label": "Placenta Previa",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/placenta-previa.md",
+      "mesh": null
+    },
+    {
+      "id": "placental_previa",
+      "label": "Placenta Previa",
+      "group": "risk_factor",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "placental_abruption",
+      "label": "Placental Abruption",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/placental-abruption.md",
+      "mesh": "D000073605"
+    },
+    {
+      "id": "placental_dysfunction",
+      "label": "Placental Dysfunction",
+      "group": "mechanism",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "polycystic_ovary_syndrome",
+      "label": "Polycystic Ovary Syndrome",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/polycystic-ovary-syndrome.md",
+      "mesh": null
+    },
+    {
+      "id": "PCOS",
+      "label": "Polycystic Ovary Syndrome (PCOS)",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/PCOS.md",
+      "mesh": null
+    },
+    {
+      "id": "polyhydramnios",
+      "label": "Polyhydramnios",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/polyhydramnios.md",
+      "mesh": null
+    },
+    {
+      "id": "postpartum_depression",
+      "label": "Postpartum Depression",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/postpartum-depression.md",
+      "mesh": null
+    },
+    {
+      "id": "postpartum_hemorrhage",
+      "label": "Postpartum Hemorrhage",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/postpartum-hemorrhage.md",
+      "mesh": "D011248"
+    },
+    {
+      "id": "postterm_pregnancy",
+      "label": "Postterm Pregnancy",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/postterm-pregnancy.md",
+      "mesh": null
+    },
+    {
+      "id": "preeclampsia",
+      "label": "Preeclampsia",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/preeclampsia.md",
+      "mesh": "D011236"
+    },
+    {
+      "id": "pregnancy",
+      "label": "Pregnancy",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/pregnancy.md",
+      "mesh": null
+    },
+    {
+      "id": "premature_rupture_of_membranes",
+      "label": "Premature Rupture of Membranes (PROM / PPROM)",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/premature-rupture-of-membranes.md",
+      "mesh": null
+    },
+    {
+      "id": "prenatal_care",
+      "label": "Prenatal Care",
+      "group": "concept",
+      "canonical": true,
+      "page": "concepts/prenatal-care.md",
+      "mesh": null
+    },
+    {
+      "id": "preterm_birth",
+      "label": "Preterm Birth",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/preterm-birth.md",
+      "mesh": null
+    },
+    {
+      "id": "preterm_labor",
+      "label": "Preterm Labor",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/preterm-labor.md",
+      "mesh": "D007751"
+    },
+    {
+      "id": "previous_cesarean",
+      "label": "Previous Cesarean",
+      "group": "risk_factor",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "primiparity",
+      "label": "Primiparity",
+      "group": "risk_factor",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "progesterone",
+      "label": "Progesterone",
+      "group": "drug",
+      "canonical": true,
+      "page": "drugs/progesterone.md",
+      "mesh": null
+    },
+    {
+      "id": "proteinuria",
+      "label": "Proteinuria",
+      "group": "symptom",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "pulmonary_edema",
+      "label": "Pulmonary Edema",
+      "group": "symptom",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "respiratory_distress_syndrome",
+      "label": "Respiratory Distress Syndrome",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/respiratory-distress-syndrome.md",
+      "mesh": null
+    },
+    {
+      "id": "rhogam",
+      "label": "Rh immune globulin (Rhogam)",
+      "group": "drug",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "rupture",
+      "label": "Rupture",
+      "group": "symptom",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "salpingectomy",
+      "label": "Salpingectomy",
+      "group": "procedure",
+      "canonical": true,
+      "page": "procedures/salpingectomy.md",
+      "mesh": null
+    },
+    {
+      "id": "salpingostomy",
+      "label": "Salpingostomy",
+      "group": "procedure",
+      "canonical": true,
+      "page": "procedures/salpingostomy.md",
+      "mesh": null
+    },
+    {
+      "id": "seizures",
+      "label": "Seizures",
+      "group": "symptom",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "sepsis",
+      "label": "Sepsis",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/sepsis.md",
+      "mesh": null
+    },
+    {
+      "id": "sexually_transmitted_infections",
+      "label": "Sexually Transmitted Infections",
+      "group": "concept",
+      "canonical": true,
+      "page": "concepts/sexually-transmitted-infections.md",
+      "mesh": null
+    },
+    {
+      "id": "sheehan_syndrome",
+      "label": "Sheehan Syndrome",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/sheehan-syndrome.md",
+      "mesh": null
+    },
+    {
+      "id": "shoulder_dystocia",
+      "label": "Shoulder Dystocia",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/shoulder-dystocia.md",
+      "mesh": null
+    },
+    {
+      "id": "smoking",
+      "label": "Smoking",
+      "group": "risk_factor",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "surgical_management",
+      "label": "Surgical Management",
+      "group": "procedure",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "thrombocytopenia",
+      "label": "Thrombocytopenia",
+      "group": "symptom",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "tocolysis",
+      "label": "Tocolysis",
+      "group": "concept",
+      "canonical": true,
+      "page": "concepts/tocolysis.md",
+      "mesh": null
+    },
+    {
+      "id": "tranexamic_acid",
+      "label": "Tranexamic Acid",
+      "group": "drug",
+      "canonical": true,
+      "page": "drugs/tranexamic-acid.md",
+      "mesh": null
+    },
+    {
+      "id": "transvaginal_ultrasonography",
+      "label": "Transvaginal Ultrasonography (TVS)",
+      "group": "procedure",
+      "canonical": true,
+      "page": "procedures/transvaginal-ultrasonography.md",
+      "mesh": null
+    },
+    {
+      "id": "ultrasound_tv",
+      "label": "Transvaginal Ultrasound",
+      "group": "procedure",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "transvaginal_ultrasound",
+      "label": "Transvaginal Ultrasound",
+      "group": "procedure",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "trauma",
+      "label": "Trauma",
+      "group": "risk_factor",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "trisomy_21",
+      "label": "Trisomy 21",
+      "group": "concept",
+      "canonical": true,
+      "page": "concepts/trisomy-21.md",
+      "mesh": null
+    },
+    {
+      "id": "tubal_ligation",
+      "label": "Tubal Ligation",
+      "group": "procedure",
+      "canonical": true,
+      "page": "procedures/tubal-ligation.md",
+      "mesh": null
+    },
+    {
+      "id": "tubo_ovarian_abscess",
+      "label": "Tubo-Ovarian Abscess (TOA)",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/tubo-ovarian-abscess.md",
+      "mesh": null
+    },
+    {
+      "id": "twin_to_twin_transfusion_syndrome",
+      "label": "Twin-to-Twin Transfusion Syndrome (TTTS)",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/twin-to-twin-transfusion-syndrome.md",
+      "mesh": null
+    },
+    {
+      "id": "umbilical_artery_doppler",
+      "label": "Umbilical Artery Doppler",
+      "group": "procedure",
+      "canonical": true,
+      "page": "procedures/umbilical-artery-doppler.md",
+      "mesh": null
+    },
+    {
+      "id": "urinary_incontinence",
+      "label": "Urinary Incontinence",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/urinary-incontinence.md",
+      "mesh": null
+    },
+    {
+      "id": "arterial_embolization",
+      "label": "Uterine Arterial Embolization",
+      "group": "procedure",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "doppler_uta",
+      "label": "Uterine Artery Doppler",
+      "group": "procedure",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "uterine_artery_embolization",
+      "label": "Uterine Artery Embolization (UAE)",
+      "group": "procedure",
+      "canonical": true,
+      "page": "procedures/uterine-artery-embolization.md",
+      "mesh": null
+    },
+    {
+      "id": "uterine_atony",
+      "label": "Uterine Atony",
+      "group": "mechanism",
+      "canonical": true,
+      "page": "mechanisms/uterine-atony.md",
+      "mesh": null
+    },
+    {
+      "id": "uterine_tenderness",
+      "label": "Uterine Tenderness",
+      "group": "symptom",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "vaginal_birth_after_cesarean",
+      "label": "Vaginal Birth After Cesarean",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/vaginal-birth-after-cesarean.md",
+      "mesh": null
+    },
+    {
+      "id": "vaginal_bleeding",
+      "label": "Vaginal Bleeding in Pregnancy",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/vaginal-bleeding.md",
+      "mesh": null
+    },
+    {
+      "id": "vasectomy",
+      "label": "Vasectomy",
+      "group": "procedure",
+      "canonical": true,
+      "page": "procedures/vasectomy.md",
+      "mesh": null
+    },
+    {
+      "id": "visual_changes",
+      "label": "Visual Changes",
+      "group": "symptom",
+      "canonical": false,
+      "page": null,
+      "mesh": null
+    },
+    {
+      "id": "vulvovaginitis",
+      "label": "Vulvovaginitis",
+      "group": "condition",
+      "canonical": true,
+      "page": "conditions/vulvovaginitis.md",
+      "mesh": null
+    }
+  ],
+  "edges": [
+    {
+      "from": "advanced_maternal_age",
+      "to": "preeclampsia",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "preeclampsia.md"
+    },
+    {
+      "from": "advanced_maternal_age",
+      "to": "gestational_diabetes",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "gestational-diabetes.md"
+    },
+    {
+      "from": "amniotic_fluid",
+      "to": "oligohydramnios",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "amniotic-fluid.md"
+    },
+    {
+      "from": "amniotic_fluid",
+      "to": "polyhydramnios",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "amniotic-fluid.md"
+    },
+    {
+      "from": "arterial_embolization",
+      "to": "postpartum_hemorrhage",
+      "relation": "treats",
+      "evidence": "2B",
+      "source": "postpartum-hemorrhage.md"
+    },
+    {
+      "from": "arterial_embolization",
+      "to": "placental_abruption",
+      "relation": "treats",
+      "evidence": "2B",
+      "source": "IR for refractory bleeding"
+    },
+    {
+      "from": "biophysical_profile",
+      "to": "fetal_growth_restriction",
+      "relation": "assesses",
+      "evidence": "2B",
+      "source": "conditions/fetal-growth-restriction.md"
+    },
+    {
+      "from": "biophysical_profile",
+      "to": "fetal_surveillance",
+      "relation": "assesses",
+      "evidence": "2B",
+      "source": "fetal-surveillance.md"
+    },
+    {
+      "from": "carboprost",
+      "to": "uterine_atony",
+      "relation": "treats",
+      "evidence": "1A",
+      "source": "ACOG PPH \u2014 uterotonic agent"
+    },
+    {
+      "from": "carboprost",
+      "to": "postpartum_hemorrhage",
+      "relation": "treats",
+      "evidence": "2B",
+      "source": "postpartum-hemorrhage.md"
+    },
+    {
+      "from": "cervical_cerclage",
+      "to": "cervical_incompetence",
+      "relation": "treats",
+      "evidence": "2B",
+      "source": "conditions/preterm-labor.md"
+    },
+    {
+      "from": "cervical_cerclage",
+      "to": "preterm_labor",
+      "relation": "treats",
+      "evidence": "1B",
+      "source": "preterm-labor.md"
+    },
+    {
+      "from": "cervical_cerclage",
+      "to": "preterm_labor",
+      "relation": "prevents",
+      "evidence": "1A",
+      "source": "ACOG"
+    },
+    {
+      "from": "cervical_incompetence",
+      "to": "chorioamnionitis",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "conditions/chorioamnionitis.md"
+    },
+    {
+      "from": "cervical_incompetence",
+      "to": "preterm_labor",
+      "relation": "risk_factor_for",
+      "evidence": "1A",
+      "source": "ACOG"
+    },
+    {
+      "from": "cervical_incompetence_cond",
+      "to": "preterm_labor",
+      "relation": "risk_factor_for",
+      "evidence": "1A",
+      "source": "ACOG \u2014 direct causation"
+    },
+    {
+      "from": "cervical_incompetence_cond",
+      "to": "chorioamnionitis",
+      "relation": "related_to",
+      "evidence": "2B",
+      "source": "conditions/chorioamnionitis.md"
+    },
+    {
+      "from": "cervical_length",
+      "to": "preterm_labor",
+      "relation": "assesses",
+      "evidence": "1A",
+      "source": "ACOG \u2014 serial CL measurement"
+    },
+    {
+      "from": "cervical_length",
+      "to": "preterm_labor",
+      "relation": "diagnoses",
+      "evidence": "2B",
+      "source": "preterm-labor.md"
+    },
+    {
+      "from": "cesarean_delivery",
+      "to": "placental_abruption",
+      "relation": "treats",
+      "evidence": "2B",
+      "source": "conditions/placental-abruption.md"
+    },
+    {
+      "from": "cesarean_delivery",
+      "to": "placental_abruption",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "placental-abruption.md"
+    },
+    {
+      "from": "cesarean_delivery",
+      "to": "postpartum_hemorrhage",
+      "relation": "risk_factor_for",
+      "evidence": "1A",
+      "source": "ACOG"
+    },
+    {
+      "from": "cesarean_delivery",
+      "to": "fetal_distress",
+      "relation": "treats",
+      "evidence": "2B",
+      "source": "conditions/fetal-surveillance.md"
+    },
+    {
+      "from": "chorioamnionitis",
+      "to": "fever",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "conditions/chorioamnionitis.md"
+    },
+    {
+      "from": "chorioamnionitis",
+      "to": "uterine_atony",
+      "relation": "mechanism_of",
+      "evidence": "2B",
+      "source": "conditions/chorioamnionitis.md"
+    },
+    {
+      "from": "chorioamnionitis",
+      "to": "fever",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "chorioamnionitis.md"
+    },
+    {
+      "from": "chorioamnionitis",
+      "to": "postpartum_hemorrhage",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "conditions/chorioamnionitis.md"
+    },
+    {
+      "from": "chorioamnionitis",
+      "to": "preterm_labor",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "conditions/chorioamnionitis.md"
+    },
+    {
+      "from": "chorioamnionitis",
+      "to": "uterine_tenderness",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "conditions/chorioamnionitis.md"
+    },
+    {
+      "from": "chronic_hypertension",
+      "to": "preeclampsia",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "preeclampsia.md"
+    },
+    {
+      "from": "cocaine_use",
+      "to": "placental_abruption",
+      "relation": "related_to",
+      "evidence": "2B",
+      "source": "conditions/placental-abruption.md"
+    },
+    {
+      "from": "cocaine_use",
+      "to": "placental_abruption",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "placental-abruption.md"
+    },
+    {
+      "from": "corticosteroids",
+      "to": "preterm_labor",
+      "relation": "treats",
+      "evidence": "1A",
+      "source": "preterm-labor.md"
+    },
+    {
+      "from": "corticosteroids",
+      "to": "fetal_growth_restriction",
+      "relation": "treats",
+      "evidence": "2B",
+      "source": "conditions/fetal-growth-restriction.md"
+    },
+    {
+      "from": "diabetes_mellitus",
+      "to": "gestational_diabetes",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "gestational-diabetes.md"
+    },
+    {
+      "from": "diabetes_mellitus",
+      "to": "preeclampsia",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "preeclampsia.md"
+    },
+    {
+      "from": "dilation_curettage",
+      "to": "postpartum_hemorrhage",
+      "relation": "treats",
+      "evidence": "2B",
+      "source": "conditions/postpartum-hemorrhage.md"
+    },
+    {
+      "from": "dilation_curettage",
+      "to": "ectopic_pregnancy",
+      "relation": "treats",
+      "evidence": "2B",
+      "source": "ectopic-pregnancy.md"
+    },
+    {
+      "from": "doppler_uta",
+      "to": "fetal_surveillance",
+      "relation": "assesses",
+      "evidence": "2B",
+      "source": "fetal-surveillance.md"
+    },
+    {
+      "from": "doppler_uta",
+      "to": "fetal_growth_restriction",
+      "relation": "assesses",
+      "evidence": "2B",
+      "source": "conditions/fetal-growth-restriction.md"
+    },
+    {
+      "from": "doppler_uta",
+      "to": "fetal_growth_restriction",
+      "relation": "diagnoses",
+      "evidence": "1A",
+      "source": "ACOG"
+    },
+    {
+      "from": "ectopic_pregnancy",
+      "to": "smoking",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "ectopic-pregnancy.md"
+    },
+    {
+      "from": "ectopic_pregnancy",
+      "to": "previous_cesarean",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "ectopic-pregnancy.md"
+    },
+    {
+      "from": "ectopic_pregnancy",
+      "to": "rupture",
+      "relation": "mechanism_of",
+      "evidence": "2B",
+      "source": "conditions/ectopic-pregnancy.md"
+    },
+    {
+      "from": "ectopic_pregnancy",
+      "to": "abdominal_pain",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "ectopic-pregnancy.md"
+    },
+    {
+      "from": "ectopic_pregnancy",
+      "to": "vaginal_bleeding",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "ectopic-pregnancy.md"
+    },
+    {
+      "from": "ectopic_pregnancy",
+      "to": "rupture",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "ectopic-pregnancy.md"
+    },
+    {
+      "from": "ectopic_pregnancy",
+      "to": "hemorrhage",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "ectopic-pregnancy.md"
+    },
+    {
+      "from": "fetal_fibronectin",
+      "to": "preterm_labor",
+      "relation": "diagnoses",
+      "evidence": "2B",
+      "source": "preterm-labor.md"
+    },
+    {
+      "from": "fetal_fibronectin",
+      "to": "preterm_labor",
+      "relation": "assesses",
+      "evidence": "1B",
+      "source": "ACOG \u2014 positive predicts PTL"
+    },
+    {
+      "from": "fetal_growth_restriction",
+      "to": "preterm_labor",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "conditions/fetal-growth-restriction.md"
+    },
+    {
+      "from": "fetal_growth_restriction",
+      "to": "trophoblast_invasion",
+      "relation": "mechanism_of",
+      "evidence": "2B",
+      "source": "conditions/fetal-growth-restriction.md"
+    },
+    {
+      "from": "fetal_growth_restriction",
+      "to": "endothelial_dysfunction",
+      "relation": "mechanism_of",
+      "evidence": "2B",
+      "source": "conditions/fetal-growth-restriction.md"
+    },
+    {
+      "from": "fetal_growth_restriction",
+      "to": "spiral_artery_remodeling",
+      "relation": "mechanism_of",
+      "evidence": "2B",
+      "source": "conditions/fetal-growth-restriction.md"
+    },
+    {
+      "from": "fetal_growth_restriction",
+      "to": "placental_dysfunction",
+      "relation": "related_to",
+      "evidence": "2B",
+      "source": "conditions/fetal-growth-restriction.md"
+    },
+    {
+      "from": "fetal_growth_restriction",
+      "to": "placental_dysfunction",
+      "relation": "mechanism_of",
+      "evidence": "1A",
+      "source": "ACOG"
+    },
+    {
+      "from": "fetal_growth_restriction",
+      "to": "fetal_anomalies",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "ACOG"
+    },
+    {
+      "from": "fetal_surveillance",
+      "to": "fetal_distress",
+      "relation": "assesses",
+      "evidence": "2B",
+      "source": "fetal-surveillance.md"
+    },
+    {
+      "from": "fetal_surveillance",
+      "to": "fetal_growth_restriction",
+      "relation": "assesses",
+      "evidence": "2B",
+      "source": "fetal-surveillance.md"
+    },
+    {
+      "from": "fetal_surveillance",
+      "to": "macrosomia",
+      "relation": "assesses",
+      "evidence": "2B",
+      "source": "fetal-surveillance.md"
+    },
+    {
+      "from": "fetal_surveillance",
+      "to": "fetal_anomalies",
+      "relation": "assesses",
+      "evidence": "2B",
+      "source": "fetal-surveillance.md"
+    },
+    {
+      "from": "gestational_diabetes",
+      "to": "fetal_growth_restriction",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "conditions/fetal-growth-restriction.md"
+    },
+    {
+      "from": "gestational_diabetes",
+      "to": "preeclampsia",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "gestational-diabetes.md"
+    },
+    {
+      "from": "gestational_diabetes",
+      "to": "fetal_surveillance",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "gestational-diabetes.md"
+    },
+    {
+      "from": "gestational_diabetes",
+      "to": "macrosomia",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "gestational-diabetes.md"
+    },
+    {
+      "from": "gestational_diabetes",
+      "to": "shoulder_dystocia",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "gestational-diabetes.md"
+    },
+    {
+      "from": "gestational_diabetes",
+      "to": "fetal_growth_restriction",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "ACOG"
+    },
+    {
+      "from": "gestational_diabetes",
+      "to": "polyhydramnios",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "gestational-diabetes.md"
+    },
+    {
+      "from": "gitelman_syndrome",
+      "to": "preeclampsia",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "textbook/gabbe.md"
+    },
+    {
+      "from": "gitelman_syndrome",
+      "to": "chronic_hypertension",
+      "relation": "related_to",
+      "evidence": "4",
+      "source": "manual_gap_fix"
+    },
+    {
+      "from": "glyburide",
+      "to": "gestational_diabetes",
+      "relation": "treats",
+      "evidence": "1B",
+      "source": "gestational-diabetes.md"
+    },
+    {
+      "from": "glyburide",
+      "to": "macrosomia",
+      "relation": "prevents",
+      "evidence": "2B",
+      "source": "ACOG GDM \u2014 reduces fetal overgrowth"
+    },
+    {
+      "from": "history_preeclampsia",
+      "to": "preeclampsia",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "preeclampsia.md"
+    },
+    {
+      "from": "hypertension",
+      "to": "placental_abruption",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "placental-abruption.md"
+    },
+    {
+      "from": "hysterectomy",
+      "to": "postpartum_hemorrhage",
+      "relation": "treats",
+      "evidence": "1B",
+      "source": "postpartum-hemorrhage.md"
+    },
+    {
+      "from": "hysterectomy",
+      "to": "placental_abruption",
+      "relation": "treats",
+      "evidence": "1B",
+      "source": "ACOG \u2014 emergent hemorrhage control"
+    },
+    {
+      "from": "insulin",
+      "to": "gestational_diabetes",
+      "relation": "treats",
+      "evidence": "1A",
+      "source": "gestational-diabetes.md"
+    },
+    {
+      "from": "insulin",
+      "to": "fetal_growth_restriction",
+      "relation": "prevents",
+      "evidence": "1A",
+      "source": "ACOG GDM \u2014 optimal glycemic control"
+    },
+    {
+      "from": "labetalol",
+      "to": "preeclampsia",
+      "relation": "treats",
+      "evidence": "1B",
+      "source": "preeclampsia.md"
+    },
+    {
+      "from": "labetalol",
+      "to": "hypertension",
+      "relation": "treats",
+      "evidence": "1B",
+      "source": "ACOG hypertension control"
+    },
+    {
+      "from": "laceration_repair",
+      "to": "postpartum_hemorrhage",
+      "relation": "treats",
+      "evidence": "1B",
+      "source": "postpartum-hemorrhage.md"
+    },
+    {
+      "from": "laceration_repair",
+      "to": "placental_abruption",
+      "relation": "treats",
+      "evidence": "1B",
+      "source": "Trauma-related lacerations"
+    },
+    {
+      "from": "low_dose_aspirin",
+      "to": "fetal_growth_restriction",
+      "relation": "prevents",
+      "evidence": "1B",
+      "source": "conditions/fetal-growth-restriction.md"
+    },
+    {
+      "from": "low_dose_aspirin",
+      "to": "preeclampsia",
+      "relation": "prevents",
+      "evidence": "1A",
+      "source": "preeclampsia.md"
+    },
+    {
+      "from": "low_papp_a",
+      "to": "fetal_growth_restriction",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "Literature"
+    },
+    {
+      "from": "macrosomia",
+      "to": "shoulder_dystocia",
+      "relation": "causes",
+      "evidence": "1A",
+      "source": "ACOG \u2014 fetal size-related complication"
+    },
+    {
+      "from": "magnesium_sulfate",
+      "to": "preeclampsia",
+      "relation": "treats",
+      "evidence": "1A",
+      "source": "preeclampsia.md"
+    },
+    {
+      "from": "magnesium_sulfate",
+      "to": "eclampsia",
+      "relation": "prevents",
+      "evidence": "1A",
+      "source": "MAGPIE trial"
+    },
+    {
+      "from": "magnesium_sulfate",
+      "to": "preterm_labor",
+      "relation": "neuroprotection",
+      "evidence": "1A",
+      "source": "NICE NG25"
+    },
+    {
+      "from": "metformin",
+      "to": "gestational_diabetes",
+      "relation": "treats",
+      "evidence": "1B",
+      "source": "gestational-diabetes.md"
+    },
+    {
+      "from": "metformin",
+      "to": "fetal_growth_restriction",
+      "relation": "prevents",
+      "evidence": "2B",
+      "source": "ACOG GDM"
+    },
+    {
+      "from": "methotrexate",
+      "to": "ectopic_pregnancy",
+      "relation": "assesses",
+      "evidence": "2B",
+      "source": "Follow-up hCG decline monitoring"
+    },
+    {
+      "from": "methotrexate",
+      "to": "ectopic_pregnancy",
+      "relation": "treats",
+      "evidence": "1B",
+      "source": "ectopic-pregnancy.md"
+    },
+    {
+      "from": "methyldopa",
+      "to": "preeclampsia",
+      "relation": "treats",
+      "evidence": "1B",
+      "source": "preeclampsia.md"
+    },
+    {
+      "from": "methyldopa",
+      "to": "hypertension",
+      "relation": "treats",
+      "evidence": "1B",
+      "source": "ACOG hypertension control"
+    },
+    {
+      "from": "methylergonovine",
+      "to": "postpartum_hemorrhage",
+      "relation": "treats",
+      "evidence": "2B",
+      "source": "postpartum-hemorrhage.md"
+    },
+    {
+      "from": "methylergonovine",
+      "to": "uterine_atony",
+      "relation": "treats",
+      "evidence": "1A",
+      "source": "ACOG PPH \u2014 uterotonic agent"
+    },
+    {
+      "from": "misoprostol",
+      "to": "postpartum_hemorrhage",
+      "relation": "treats",
+      "evidence": "1A",
+      "source": "postpartum-hemorrhage.md"
+    },
+    {
+      "from": "misoprostol",
+      "to": "ectopic_pregnancy",
+      "relation": "related_to",
+      "evidence": "2B",
+      "source": "conditions/ectopic-pregnancy.md"
+    },
+    {
+      "from": "misoprostol",
+      "to": "uterine_atony",
+      "relation": "treats",
+      "evidence": "1A",
+      "source": "ACOG PPH \u2014 uterotonic agent"
+    },
+    {
+      "from": "misoprostol",
+      "to": "ectopic_pregnancy",
+      "relation": "treats",
+      "evidence": "2B",
+      "source": "Medical management alternative"
+    },
+    {
+      "from": "multiple_pregnancy",
+      "to": "preeclampsia",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "preeclampsia.md"
+    },
+    {
+      "from": "multiple_pregnancy",
+      "to": "preterm_labor",
+      "relation": "risk_factor_for",
+      "evidence": "1A",
+      "source": "ACOG"
+    },
+    {
+      "from": "multiple_pregnancy",
+      "to": "postpartum_hemorrhage",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "postpartum-hemorrhage.md"
+    },
+    {
+      "from": "nifedipine",
+      "to": "preeclampsia",
+      "relation": "treats",
+      "evidence": "1B",
+      "source": "preeclampsia.md"
+    },
+    {
+      "from": "nifedipine",
+      "to": "hypertension",
+      "relation": "treats",
+      "evidence": "1B",
+      "source": "ACOG hypertension control"
+    },
+    {
+      "from": "nonstress_test",
+      "to": "fetal_surveillance",
+      "relation": "related_to",
+      "evidence": "2B",
+      "source": "conditions/fetal-surveillance.md"
+    },
+    {
+      "from": "nonstress_test",
+      "to": "fetal_surveillance",
+      "relation": "assesses",
+      "evidence": "2B",
+      "source": "fetal-surveillance.md"
+    },
+    {
+      "from": "obesity",
+      "to": "gestational_diabetes",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "gestational-diabetes.md"
+    },
+    {
+      "from": "obesity",
+      "to": "preeclampsia",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "preeclampsia.md"
+    },
+    {
+      "from": "oligohydramnios",
+      "to": "fetal_growth_restriction",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "amniotic-fluid.md"
+    },
+    {
+      "from": "oxytocin",
+      "to": "postpartum_hemorrhage",
+      "relation": "treats",
+      "evidence": "1A",
+      "source": "postpartum-hemorrhage.md"
+    },
+    {
+      "from": "oxytocin",
+      "to": "uterine_atony",
+      "relation": "treats",
+      "evidence": "1A",
+      "source": "ACOG PPH \u2014 first-line uterotonic"
+    },
+    {
+      "from": "placental_abruption",
+      "to": "fetal_growth_restriction",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "conditions/fetal-growth-restriction.md"
+    },
+    {
+      "from": "placental_abruption",
+      "to": "postpartum_hemorrhage",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "postpartum-hemorrhage.md"
+    },
+    {
+      "from": "placental_abruption",
+      "to": "preeclampsia",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "placental-abruption.md"
+    },
+    {
+      "from": "placental_abruption",
+      "to": "coagulopathy",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "placental-abruption.md"
+    },
+    {
+      "from": "placental_abruption",
+      "to": "fetal_distress",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "placental-abruption.md"
+    },
+    {
+      "from": "placental_abruption",
+      "to": "iron_deficiency",
+      "relation": "causes",
+      "evidence": "1A",
+      "source": "ACOG \u2014 hemorrhage leads to anemia"
+    },
+    {
+      "from": "placental_abruption",
+      "to": "uterine_tenderness",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "placental-abruption.md"
+    },
+    {
+      "from": "placental_abruption",
+      "to": "abdominal_pain",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "placental-abruption.md"
+    },
+    {
+      "from": "placental_abruption",
+      "to": "preterm_labor",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "placental-abruption.md"
+    },
+    {
+      "from": "placental_abruption",
+      "to": "placental_dysfunction",
+      "relation": "mechanism_of",
+      "evidence": "2B",
+      "source": "Literature"
+    },
+    {
+      "from": "placental_abruption",
+      "to": "vaginal_bleeding",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "placental-abruption.md"
+    },
+    {
+      "from": "placental_abruption",
+      "to": "coagulopathy_mechanism",
+      "relation": "mechanism_of",
+      "evidence": "2B",
+      "source": "conditions/placental-abruption.md"
+    },
+    {
+      "from": "placental_previa",
+      "to": "postpartum_hemorrhage",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "postpartum-hemorrhage.md"
+    },
+    {
+      "from": "placental_previa",
+      "to": "placental_abruption",
+      "relation": "risk_factor_for",
+      "evidence": "1A",
+      "source": "ACOG"
+    },
+    {
+      "from": "polyhydramnios",
+      "to": "gestational_diabetes",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "amniotic-fluid.md"
+    },
+    {
+      "from": "polyhydramnios",
+      "to": "diabetes_mellitus",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "amniotic-fluid.md"
+    },
+    {
+      "from": "polyhydramnios",
+      "to": "fetal_anomalies",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "amniotic-fluid.md"
+    },
+    {
+      "from": "postpartum_hemorrhage",
+      "to": "hemorrhage",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "postpartum-hemorrhage.md"
+    },
+    {
+      "from": "postpartum_hemorrhage",
+      "to": "coagulopathy",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "postpartum-hemorrhage.md"
+    },
+    {
+      "from": "postpartum_hemorrhage",
+      "to": "fetal_distress",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "postpartum-hemorrhage.md"
+    },
+    {
+      "from": "postpartum_hemorrhage",
+      "to": "iron_deficiency",
+      "relation": "causes",
+      "evidence": "1A",
+      "source": "ACOG"
+    },
+    {
+      "from": "postpartum_hemorrhage",
+      "to": "uterine_atony",
+      "relation": "mechanism_of",
+      "evidence": "2B",
+      "source": "postpartum-hemorrhage.md"
+    },
+    {
+      "from": "postpartum_hemorrhage",
+      "to": "coagulopathy_mechanism",
+      "relation": "mechanism_of",
+      "evidence": "1A",
+      "source": "ACOG"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "hypertension",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "preeclampsia.md"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "visual_changes",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "preeclampsia.md"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "fetal_surveillance",
+      "relation": "assesses",
+      "evidence": "2C",
+      "source": "auto_expansion"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "history_preeclampsia",
+      "relation": "mechanism_of",
+      "evidence": "2C",
+      "source": "auto_expansion"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "hypertension",
+      "relation": "mechanism_of",
+      "evidence": "2C",
+      "source": "auto_expansion"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "low_dose_aspirin",
+      "relation": "prevents",
+      "evidence": "2C",
+      "source": "auto_expansion"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "low_dose_aspirin",
+      "relation": "causes",
+      "evidence": "2C",
+      "source": "auto_expansion"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "magnesium_sulfate",
+      "relation": "assesses",
+      "evidence": "2C",
+      "source": "auto_expansion"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "magnesium_sulfate",
+      "relation": "causes",
+      "evidence": "2C",
+      "source": "auto_expansion"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "multiple_pregnancy",
+      "relation": "mechanism_of",
+      "evidence": "2C",
+      "source": "auto_expansion"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "obesity",
+      "relation": "mechanism_of",
+      "evidence": "2C",
+      "source": "auto_expansion"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "placental_abruption",
+      "relation": "mechanism_of",
+      "evidence": "2C",
+      "source": "auto_expansion"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "placental_abruption",
+      "relation": "assesses",
+      "evidence": "2C",
+      "source": "auto_expansion"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "primiparity",
+      "relation": "mechanism_of",
+      "evidence": "2C",
+      "source": "auto_expansion"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "proteinuria",
+      "relation": "prevents",
+      "evidence": "2C",
+      "source": "auto_expansion"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "pulmonary_edema",
+      "relation": "prevents",
+      "evidence": "2C",
+      "source": "auto_expansion"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "pulmonary_edema",
+      "relation": "assesses",
+      "evidence": "2C",
+      "source": "auto_expansion"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "seizures",
+      "relation": "assesses",
+      "evidence": "2C",
+      "source": "auto_expansion"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "thrombocytopenia",
+      "relation": "prevents",
+      "evidence": "2C",
+      "source": "auto_expansion"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "thrombocytopenia",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "preeclampsia.md"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "elevated_liver_enzymes",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "preeclampsia.md"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "pulmonary_edema",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "preeclampsia.md"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "seizures",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "preeclampsia.md"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "placental_dysfunction",
+      "relation": "mechanism_of",
+      "evidence": "2B",
+      "source": "preeclampsia.md"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "headache",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "preeclampsia.md"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "fetal_surveillance",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "preeclampsia.md"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "edema",
+      "relation": "assesses",
+      "evidence": "2C",
+      "source": "auto_expansion"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "eclampsia",
+      "relation": "risk_factor_for",
+      "evidence": "1A",
+      "source": "ACOG"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "preterm_labor",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "preterm-labor.md"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "edema",
+      "relation": "prevents",
+      "evidence": "2C",
+      "source": "auto_expansion"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "elevated_liver_enzymes",
+      "relation": "assesses",
+      "evidence": "2C",
+      "source": "auto_expansion"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "diabetes_mellitus",
+      "relation": "mechanism_of",
+      "evidence": "2C",
+      "source": "auto_expansion"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "chronic_hypertension",
+      "relation": "mechanism_of",
+      "evidence": "2C",
+      "source": "auto_expansion"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "angiogenic_imbalance",
+      "relation": "mechanism_of",
+      "evidence": "2B",
+      "source": "preeclampsia.md"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "angiogenic_imbalance",
+      "relation": "mechanism_of",
+      "evidence": "2C",
+      "source": "auto_expansion"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "advanced_maternal_age",
+      "relation": "mechanism_of",
+      "evidence": "2C",
+      "source": "auto_expansion"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "spiral_artery_remodeling",
+      "relation": "mechanism_of",
+      "evidence": "2B",
+      "source": "conditions/preeclampsia.md"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "edema",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "conditions/preeclampsia.md"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "proteinuria",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "preeclampsia.md"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "coagulopathy_mechanism",
+      "relation": "mechanism_of",
+      "evidence": "2B",
+      "source": "conditions/preeclampsia.md"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "trophoblast_invasion",
+      "relation": "mechanism_of",
+      "evidence": "2B",
+      "source": "conditions/preeclampsia.md"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "headache",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "conditions/preeclampsia.md"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "placental_abruption",
+      "relation": "risk_factor_for",
+      "evidence": "1A",
+      "source": "ACOG"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "fetal_growth_restriction",
+      "relation": "risk_factor_for",
+      "evidence": "1A",
+      "source": "ACOG"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "visual_changes",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "conditions/preeclampsia.md"
+    },
+    {
+      "from": "preeclampsia",
+      "to": "endothelial_dysfunction",
+      "relation": "mechanism_of",
+      "evidence": "2B",
+      "source": "preeclampsia.md"
+    },
+    {
+      "from": "preterm_labor",
+      "to": "cervical_incompetence",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "preterm-labor.md"
+    },
+    {
+      "from": "preterm_labor",
+      "to": "chorioamnionitis",
+      "relation": "risk_factor_for",
+      "evidence": "1A",
+      "source": "ACOG"
+    },
+    {
+      "from": "preterm_labor",
+      "to": "multiple_pregnancy",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "preterm-labor.md"
+    },
+    {
+      "from": "preterm_labor",
+      "to": "placental_abruption",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "preterm-labor.md"
+    },
+    {
+      "from": "preterm_labor",
+      "to": "fetal_distress",
+      "relation": "causes",
+      "evidence": "2B",
+      "source": "preterm-labor.md"
+    },
+    {
+      "from": "preterm_labor",
+      "to": "premature_rupture_of_membranes",
+      "relation": "causes",
+      "evidence": "1A",
+      "source": "ACOG"
+    },
+    {
+      "from": "preterm_labor",
+      "to": "previous_cesarean",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "preterm-labor.md"
+    },
+    {
+      "from": "preterm_labor",
+      "to": "low_papp_a",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "preterm-labor.md"
+    },
+    {
+      "from": "preterm_labor",
+      "to": "fetal_surveillance",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "preterm-labor.md"
+    },
+    {
+      "from": "previous_cesarean",
+      "to": "ectopic_pregnancy",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "ectopic-pregnancy.md"
+    },
+    {
+      "from": "previous_cesarean",
+      "to": "placental_abruption",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "placental-abruption.md"
+    },
+    {
+      "from": "previous_cesarean",
+      "to": "gestational_diabetes",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "gestational-diabetes.md"
+    },
+    {
+      "from": "primiparity",
+      "to": "preeclampsia",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "preeclampsia.md"
+    },
+    {
+      "from": "rhogam",
+      "to": "ectopic_pregnancy",
+      "relation": "treats",
+      "evidence": "1B",
+      "source": "ectopic-pregnancy.md"
+    },
+    {
+      "from": "rhogam",
+      "to": "ectopic_pregnancy",
+      "relation": "prevents",
+      "evidence": "1A",
+      "source": "ACOG Rh sensitization"
+    },
+    {
+      "from": "smoking",
+      "to": "placental_abruption",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "placental-abruption.md"
+    },
+    {
+      "from": "surgical_management",
+      "to": "placental_abruption",
+      "relation": "treats",
+      "evidence": "2B",
+      "source": "conditions/placental-abruption.md"
+    },
+    {
+      "from": "surgical_management",
+      "to": "ectopic_pregnancy",
+      "relation": "treats",
+      "evidence": "1B",
+      "source": "ectopic-pregnancy.md"
+    },
+    {
+      "from": "tranexamic_acid",
+      "to": "postpartum_hemorrhage",
+      "relation": "treats",
+      "evidence": "1A",
+      "source": "postpartum-hemorrhage.md"
+    },
+    {
+      "from": "tranexamic_acid",
+      "to": "coagulopathy_mechanism",
+      "relation": "treats",
+      "evidence": "1A",
+      "source": "WOMAN trial \u2014 antifibrinolytic"
+    },
+    {
+      "from": "transvaginal_ultrasound",
+      "to": "ectopic_pregnancy",
+      "relation": "diagnoses",
+      "evidence": "2B",
+      "source": "conditions/ectopic-pregnancy.md"
+    },
+    {
+      "from": "transvaginal_ultrasound",
+      "to": "placental_abruption",
+      "relation": "diagnoses",
+      "evidence": "2B",
+      "source": "placental-abruption.md"
+    },
+    {
+      "from": "trauma",
+      "to": "placental_abruption",
+      "relation": "related_to",
+      "evidence": "2B",
+      "source": "conditions/placental-abruption.md"
+    },
+    {
+      "from": "trauma",
+      "to": "placental_abruption",
+      "relation": "risk_factor_for",
+      "evidence": "2B",
+      "source": "placental-abruption.md"
+    },
+    {
+      "from": "ultrasound_abd",
+      "to": "fetal_surveillance",
+      "relation": "assesses",
+      "evidence": "2B",
+      "source": "fetal-surveillance.md"
+    },
+    {
+      "from": "ultrasound_abd",
+      "to": "gestational_diabetes",
+      "relation": "diagnoses",
+      "evidence": "2B",
+      "source": "gestational-diabetes.md"
+    },
+    {
+      "from": "ultrasound_abd",
+      "to": "amniotic_fluid",
+      "relation": "diagnoses",
+      "evidence": "2B",
+      "source": "amniotic-fluid.md"
+    },
+    {
+      "from": "ultrasound_abd",
+      "to": "placental_abruption",
+      "relation": "diagnoses",
+      "evidence": "1B",
+      "source": "ACOG"
+    },
+    {
+      "from": "ultrasound_tv",
+      "to": "ectopic_pregnancy",
+      "relation": "diagnoses",
+      "evidence": "2B",
+      "source": "ectopic-pregnancy.md"
+    },
+    {
+      "from": "ultrasound_tv",
+      "to": "preterm_labor",
+      "relation": "diagnoses",
+      "evidence": "2B",
+      "source": "preterm-labor.md"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+Migration date: 2026-06-10T06:00:30.421926
+articles: 75 rows -> articles_2026-06.parquet
+textbooks: 39 rows -> textbooks.parquet
+combined: 114 rows -> sources_all.parquet
+duckdb index created

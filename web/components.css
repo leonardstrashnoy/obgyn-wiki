@@ -1,0 +1,98 @@
+/* ============================================
+   OB/GYN Wiki - Reusable Components
+   ============================================ */
+
+.panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow);
+}
+
+.btn {
+    background: var(--accent);
+    border: none;
+    border-radius: var(--radius-sm);
+    color: white;
+    padding: 8px 14px;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.1s;
+}
+.btn:hover { background: var(--accent-hover); }
+.btn:active { transform: scale(0.97); }
+
+.btn.secondary {
+    background: var(--panel-header);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+}
+.btn.secondary:hover {
+    background: #30363d;
+    color: var(--text);
+}
+
+.chip {
+    background: var(--panel-header);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 4px 10px;
+    border-radius: var(--radius-lg);
+    font-size: var(--text-xs);
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+.chip:hover {
+    background: #30363d;
+    border-color: var(--accent);
+    color: var(--text);
+}
+.chip.active {
+    background: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
+}
+
+/* Result Panel Header */
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 14px;
+    background: var(--panel-header);
+    border-bottom: 1px solid var(--border);
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+}
+
+.result-header button {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0 4px;
+    line-height: 1;
+}
+.result-header button:hover { color: var(--danger); }
+
+.result-body {
+    padding: var(--space-lg);
+    overflow-y: auto;
+    flex: 1;
+}
+
+/* Focus & Accessibility */
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* Micro-interactions */
+button, .chip {
+    transition: transform 0.1s ease, background 0.15s ease;
+}
+button:active, .chip:active {
+    transform: scale(0.96);
+}

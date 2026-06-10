@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OB/GYN Semantic Network</title>
+<link rel="stylesheet" href="assets/components.css">
+<script src="assets/vis-network.min.js"></script>
+<style>
+
+
+/* Typography Scale */
+:root {
+    --text-xs: var(--text-xs);
+    --text-sm: var(--text-sm);
+    --text-base: 15px;
+    --text-lg: 18px;
+    --text-xl: 22px;
+}
+
+body { font-size: var(--text-base); }
+h2 { font-size: var(--text-xl); font-weight: 600; }
+
+:root {
+    /* Colors */
+    --bg: #0a0c10;
+    --panel: #161b22;
+    --panel-header: #21262d;
+    --border: #484f58;
+    --text: #e6edf3;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --danger: var(--danger);
+    
+    /* Spacing */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: var(--text-xs);
+    --space-lg: 16px;
+    --space-xl: 20px;
+    
+    /* Radius */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 999px;
+    
+    /* Shadows */
+    --shadow: 0 var(--text-xs) 40px rgba(0,0,0,0.6);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow: hidden;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* ── Network canvas ─────────────────────────────── */
+#network {
+    width: 100vw;
+    height: 100vh;
+    background: var(--bg);
+}
+
+/* ── Info Panel (right) ──────────────────────────── */
+#info-panel {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 420px;
+    max-height: calc(100vh - 160px);
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    overflow-y: auto;
+    z-index: 100;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+    font-size: 15px;
+}
+#info-panel.collapsed { transform: translateX(calc(100% + 40px)); }
+#info-panel h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: var(--text-base);
+    color: #79c0ff;
+    letter-spacing: -0.3px;
+}
+#info-panel .section { margin-bottom: 16px; }
+#info-panel .section-title {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #30363d;
+}
+#info-panel .badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: var(--text-sm);
+    font-weight: 500;
+    background: var(--panel-header);
+    color: var(--text);
+    margin-right: 6px;
+    margin-bottom: 6px;
+    border: 1px solid #30363d;
+}
+#info-panel .badge.evidence-1a { background: #238636; color: #fff; border-color: #238636; }
+#info-panel .badge.evidence-1b { background: #1a7f37; color: #fff; border-color: #1a7f37; }
+#info-panel .badge.evidence-2a { background: #3fb950; color: #fff; border-color: #3fb950; }
+#info-panel .badge.evidence-2b { background: #8957e5; color: #fff; border-color: #8957e5; }
+#info-panel .badge.evidence-2c { background: #6e7681; color: #fff; border-color: #6e7681; }
+#info-panel .badge.risk { background: #da3633; color: #fff; border-color: #da3633; }
+#info-panel .badge.drug { background: #0969da; color: #fff; border-color: #0969da; }
+#info-panel .badge.procedure { background: #bc8cff; color: #0a0c10; border-color: #bc8cff; }
+#info-panel .badge.condition { background: #58a6ff; color: #0a0c10; border-color: #58a6ff; }
+#info-panel .badge.mechanism { background: #f0883e; color: #0a0c10; border-color: #f0883e; }
+#info-panel .badge.symptom { background: #ff7b72; color: #0a0c10; border-color: #ff7b72; }
+
+#info-panel .edge-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 8px 0;
+    border-bottom: 1px solid #21262d;
+    font-size: var(--text-base);
+}
+#info-panel .edge-row:last-child { border-bottom: none; }
+#info-panel .edge-label {
+    color: var(--text);
+    flex: 1;
+    padding-right: 10px;
+    line-height: 1.4;
+}
+#info-panel .edge-evidence {
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+#info-panel .btn-expand {
+    display: block;
+    width: 100%;
+    margin-top: var(--text-base);
+    padding: 10px var(--text-base);
+    background: var(--accent);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: var(--text-base);
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.15s;
+}
+#info-panel .btn-expand:hover { background: var(--accent-hover); }
+#info-panel .btn-expand:disabled {
+    background: var(--panel-header);
+    color: var(--text-muted);
+    cursor: not-allowed;
+}
+#info-panel .wiki-link {
+    color: #79c0ff;
+    font-size: var(--text-base);
+    text-decoration: none;
+    font-weight: 500;
+}
+#info-panel .wiki-link:hover { text-decoration: underline; }
+#info-panel .no-conn {
+    color: var(--text-muted);
+    font-size: var(--text-base);
+    padding: 8px 0;
+}
+
+/* ── Search Panel (top-left) ───────────────────── */
+#search-panel {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    min-width: 300px;
+    max-width: 380px;
+    box-shadow: var(--shadow);
+}
+#search-panel input {
+    width: 100%;
+    padding: 10px var(--text-base);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.15s;
+}
+#search-panel input:focus { border-color: #58a6ff; }
+#search-panel input::placeholder { color: #6e7681; }
+#search-panel .filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: var(--text-xs);
+}
+#search-panel .stats-row {
+    margin-top: var(--text-xs);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    display: flex;
+    gap: 20px;
+    font-weight: 500;
+}
+#search-panel .stats-row b { color: var(--text); }
+#search-panel .indicator {
+    margin-top: 10px;
+    font-size: var(--text-xs);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+#search-panel .indicator .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+#search-panel .indicator.connected { color: #3fb950; }
+#search-panel .indicator.disconnected { color: #da3633; }
+
+/* ── Legend (bottom-left) ────────────────────────── */
+
+#legend {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(22, 27, 34, 0.85);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 10px 14px;
+    font-size: var(--text-xs);
+    z-index: 90;
+    backdrop-filter: blur(6px);
+    min-width: 160px;
+}
+
+#legend .legend-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+#legend.collapsed .legend-items {
+    display: none;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 3px 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.1s;
+}
+.legend-item:hover {
+    background: rgba(255,255,255,0.06);
+}
+.legend-item .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+.legend-item .count {
+    margin-left: auto;
+    color: var(--text-muted);
+    font-size: 11px;
+}
+
+#legend {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--text-base) 16px;
+    z-index: 100;
+    font-size: var(--text-sm);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+#legend .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+#legend .legend-item:last-child { margin-bottom: 0; }
+#legend .dot {
+    width: var(--text-xs);
+    height: var(--text-xs);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* ── Toggle button ───────────────────────────────── */
+#toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 101;
+    background: var(--panel-header);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px var(--text-base);
+    color: var(--text);
+    cursor: pointer;
+    font-size: var(--text-sm);
+    font-weight: 500;
+    transition: background 0.15s;
+}
+#toggle-btn:hover { background: #30363d; }
+
+/* ── Query Bar (bottom-right) ────────────────────── */
+#query-bar {
+    position: fixed;
+    bottom: 54px;
+    right: 20px;
+    width: 420px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--text-xs) var(--text-base);
+    z-index: 100;
+    box-shadow: var(--shadow);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+#query-bar input {
+    flex: 1;
+    padding: 10px var(--text-base);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 15px;
+    outline: none;
+}
+#query-bar input:focus { border-color: #58a6ff; }
+#query-bar input::placeholder { color: #6e7681; }
+#query-bar button {
+    padding: 10px 16px;
+    background: #238636;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: var(--text-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+    white-space: nowrap;
+}
+#query-bar button:hover { background: #2ea043; }
+
+
+#query-result {
+    resize: both !important;
+    overflow: hidden;
+    min-width: 320px;
+    min-height: 160px;
+}
+
+#query-result {
+    position: fixed;
+    bottom: 118px;
+    right: 20px;
+    width: 420px;
+    min-width: 320px;
+    max-width: 620px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 0;
+    z-index: 100;
+    box-shadow: var(--shadow);
+    max-height: 520px;
+    min-height: 140px;
+    overflow: hidden;
+    font-size: var(--text-base);
+    display: none;
+    resize: both;
+    display: flex;
+    flex-direction: column;
+}
+#query-result pre {
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-size: var(--text-sm);
+    line-height: 1.5;
+    color: #c9d1d9;
+}
+
+/* ── Scrollbar styling ───────────────────────────── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #484f58; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #6e7681; }
+
+.example-chip {
+    background: var(--panel-header);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 4px 10px;
+    border-radius: var(--radius-lg);
+    font-size: var(--text-xs);
+    cursor: pointer;
+    transition: all 0.15s;
+}
+.example-chip:hover {
+    background: #30363d;
+    border-color: #58a6ff;
+    color: var(--text);
+}
+
+.spinner {
+    width:var(--text-base); height:var(--text-base);
+    border:2px solid #484f58;
+    border-top-color: #58a6ff;
+    border-radius:50%;
+    animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+#query-result .result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px var(--text-base);
+    background: var(--panel-header);
+    border-bottom: 1px solid #484f58;
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    cursor: move;
+}
+#query-result .result-header button {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0 4px;
+}
+#query-result .result-header button:hover {
+    color: var(--danger);
+}
+#query-result .result-body {
+    padding: 16px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+/* Component System */
+.panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow);
+}
+
+.btn {
+    background: var(--accent);
+    border: none;
+    border-radius: var(--radius-sm);
+    color: white;
+    padding: 8px var(--text-base);
+    font-size: var(--text-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+.btn:hover { background: var(--accent-hover); }
+.btn.secondary {
+    background: var(--panel-header);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+}
+.btn.secondary:hover { background: #30363d; color: var(--text); }
+
+.chip {
+    background: var(--panel-header);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 4px 10px;
+    border-radius: var(--radius-lg);
+    font-size: var(--text-xs);
+    cursor: pointer;
+    transition: all 0.15s;
+}
+.chip:hover {
+    background: #30363d;
+    border-color: var(--accent);
+    color: var(--text);
+}
+.chip.active {
+    background: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
+}
+
+/* Accessibility */
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+button, .chip {
+    transition: transform 0.1s ease;
+}
+button:active, .chip:active {
+    transform: scale(0.97);
+}
+
+/* Vis.js Network Tokens */
+:root {
+    --network-bg: var(--bg);
+}
+#network {
+    background: var(--network-bg);
+}
+
+/* Enhanced Micro-interactions */
+#search-panel, #info-panel, #query-result {
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+#search-panel:hover, #info-panel:hover {
+    box-shadow: 0 16px 50px rgba(0,0,0,0.65);
+}
+
+.chip, .btn {
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#query-result .resize-handle {
+    position: absolute;
+    background: transparent;
+    z-index: 10;
+}
+#query-result .resize-handle.right {
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 8px;
+    cursor: ew-resize;
+}
+#query-result .resize-handle.bottom {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    cursor: ns-resize;
+}
+#query-result .resize-handle.corner {
+    bottom: 0;
+    right: 0;
+    width: 16px;
+    height: 16px;
+    cursor: nwse-resize;
+}
+
+/* Resize handles for query result panel */
+#query-result .resize-handle {
+    position: absolute;
+    z-index: 20;
+    background: transparent;
+}
+#query-result .resize-handle.right {
+    top: 30px;
+    right: 0;
+    bottom: 8px;
+    width: 6px;
+    cursor: ew-resize;
+}
+#query-result .resize-handle.bottom {
+    left: 8px;
+    right: 8px;
+    bottom: 0;
+    height: 6px;
+    cursor: ns-resize;
+}
+#query-result .resize-handle.corner {
+    right: 0;
+    bottom: 0;
+    width: 14px;
+    height: 14px;
+    cursor: nwse-resize;
+    background: linear-gradient(135deg, transparent 50%, #484f58 50%);
+    border-radius: 0 0 var(--radius-md) 0;
+}
+
+/* Semi-transparent panels when not in use */
+#search-panel,
+#info-panel,
+#query-result,
+#legend {
+    opacity: 0.92;
+    transition: opacity 0.2s ease, box-shadow 0.2s ease;
+}
+
+#search-panel:hover,
+#info-panel:hover,
+#query-result:hover,
+#legend:hover {
+    opacity: 1;
+}
+</style>
+</head>
+<body>
+<button id="toggle-btn" onclick="togglePanel()">Toggle Panel</button>
+
+<div id="search-panel" class="panel">
+    <input id="search" aria-label="Search nodes" type="text" placeholder="Search nodes..." oninput="filterNodes(this.value)">
+    <div class="filter-row">
+        <button class="chip active" onclick="setFilter('all')" data-type="all">All</button>
+        <button class="chip" onclick="setFilter('condition')" data-type="condition">Conditions</button>
+        <button class="chip" onclick="setFilter('drug')" data-type="drug">Drugs</button>
+        <button class="chip" onclick="setFilter('procedure')" data-type="procedure">Procedures</button>
+        <button class="chip" onclick="setFilter('symptom')" data-type="symptom">Symptoms</button>
+        <button class="chip" onclick="setFilter('risk_factor')" data-type="risk_factor">Risks</button>
+        <button class="chip" onclick="setFilter('mechanism')" data-type="mechanism">Mechanisms</button>
+    </div>
+    <div class="stats-row">
+        <span>Nodes: <b id="node-count">0</b></span>
+        <span>Edges: <b id="edge-count">0</b></span>
+        <span>Visible: <b id="visible-count">0</b></span>
+    </div>
+    <div class="indicator" id="conn-indicator">
+        <span class="dot" style="background:#6e7681"></span>checking API...
+    </div>
+</div>
+
+<div id="info-panel" class="panel"><div style="padding:16px; color:#8b949e; font-size:14px;">Click a node to see details</div></div>
+
+<div id="network"></div>
+
+<div id="legend">
+    <div class="legend-header" onclick="toggleLegend()">
+        <span>Legend</span>
+        <span id="legend-toggle">−</span>
+    </div>
+    <div class="legend-items">
+        <div class="legend-item" data-type="condition" onclick="toggleLegendType('condition')">
+            <div class="dot" style="background:#58a6ff"></div>
+            <span style="color:#58a6ff">Condition</span>
+            <span class="count" id="count-condition">0</span>
+        </div>
+        <div class="legend-item" data-type="drug" onclick="toggleLegendType('drug')">
+            <div class="dot" style="background:#0969da"></div>
+            <span style="color:#0969da">Drug</span>
+            <span class="count" id="count-drug">0</span>
+        </div>
+        <div class="legend-item" data-type="procedure" onclick="toggleLegendType('procedure')">
+            <div class="dot" style="background:#bc8cff"></div>
+            <span style="color:#bc8cff">Procedure</span>
+            <span class="count" id="count-procedure">0</span>
+        </div>
+        <div class="legend-item" data-type="symptom" onclick="toggleLegendType('symptom')">
+            <div class="dot" style="background:#ff7b72"></div>
+            <span style="color:#ff7b72">Symptom</span>
+            <span class="count" id="count-symptom">0</span>
+        </div>
+        <div class="legend-item" data-type="risk_factor" onclick="toggleLegendType('risk_factor')">
+            <div class="dot" style="background:#da3633"></div>
+            <span style="color:#da3633">Risk Factor</span>
+            <span class="count" id="count-risk_factor">0</span>
+        </div>
+        <div class="legend-item" data-type="mechanism" onclick="toggleLegendType('mechanism')">
+            <div class="dot" style="background:#f0883e"></div>
+            <span style="color:#f0883e">Mechanism</span>
+            <span class="count" id="count-mechanism">0</span>
+        </div>
+    </div>
+</div>
+
+<div id="query-bar">
+    <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
+        <span style="color:#8b949e; font-size:var(--text-sm);">Ask the wiki:</span>
+    </div>
+    <div style="margin-bottom:8px;">
+        <select id="example-select" style="width:100%; background:var(--panel-header); color:var(--text); border:1px solid var(--border); border-radius:var(--radius-sm); padding:6px 10px; font-size:var(--text-sm);">
+            <option value="">-- Example questions --</option>
+            <option value="risk factors for preeclampsia">Risk factors for preeclampsia</option>
+            <option value="treatment of gestational diabetes">Treatment of gestational diabetes</option>
+            <option value="preeclampsia and diabetes">Preeclampsia AND diabetes</option>
+            <option value="preeclampsia or eclampsia">Preeclampsia OR eclampsia</option>
+            <option value="diagnosis of chorioamnionitis">Diagnosis of chorioamnionitis</option>
+            <option value="when to deliver in FGR">Timing of delivery in FGR</option>
+            <option value="ACOG guidelines on hypertension in pregnancy">ACOG hypertension guidelines</option>
+            <option value="contraindications to epidural in labor">Epidural contraindications</option>
+        </select>
+    </div>
+    <div style="display:flex; gap:8px;">
+        <input id="query-input" aria-label="Ask the wiki a question" type="text" placeholder="Type your question..." style="flex:1;">
+        <button class="btn" onclick="runQuery()">Ask</button>
+        <button class="btn secondary" onclick="clearQuery()">Clear</button>
+    </div>
+</div>
+<div id="query-result" class="panel"></div>
+
+<script src="assets/assets/app.js"></script>
+</body>
+</html>

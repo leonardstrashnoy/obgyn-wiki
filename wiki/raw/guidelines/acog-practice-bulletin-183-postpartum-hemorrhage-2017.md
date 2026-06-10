@@ -1,0 +1,23 @@
+---
+source_url: https://www.acog.org/clinical/clinical-guidance/practice-bulletin/articles/2017/10/postpartum-hemorrhage
+ingested: 2026-06-09
+sha256: 1d9f87f64e3b299fdec1db788bd37194fe21f9f6d4e82ee1eb562c7e5b38d6cb
+organization: ACOG
+year: 2017
+topic: postpartum-hemorrhage
+type: guideline
+evidence_level: "1A"
+---
+
+# Practice Bulletin 183: Postpartum Hemorrhage
+
+**Organization:** ACOG  
+**Year:** 2017  
+**Source:** [https://www.acog.org/clinical/clinical-guidance/practice-bulletin/articles/2017/10/postpartum-hemorrhage](https://www.acog.org/clinical/clinical-guidance/practice-bulletin/articles/2017/10/postpartum-hemorrhage)
+
+## Summary
+
+dataLayer = [ { 'data-topic': [{"name":"Blood transfusion", "id": "44682121-354B-4978-A285-B9E34604657F"},{"name":"Drug therapy", "id": "820EC268-28AD-433F-B737-C458D624F215"},{"name":"Maternal mortality", "id": "B76A895D-D3D3-4AF9-B968-6B725587E929"},{"name":"Mortality", "id": "1E54EF0D-65F8-4FE2-A88B-C0219BD4F9CB"},{"name":"Obstetric labor complications", "id": "0BC8EB57-2588-4B67-8D25-BC86CC2D0B25"},{"name":"Placenta accreta", "id": "CD69AB0E-0BA3-4202-B6B9-E3118F25675B"},{"name":"Postpartum hemorrhage", "id": "5691984E-DC4E-46A4-8EC8-81FC60004351"},{"name":"Surgical management", "id": "8C188C1D-49CB-4F0C-A649-C0113D8042C8"},{"name":"Uterine artery embolization", "id": "6FA4F34F-CBF2-4CF8-99B3-269E1F92F804"},{"name":"Uterine inversion", "id": "521C6914-B17B-46C1-82E7-DA22525BBB7B"},{"name":"Uterine rupture", "id": "78C0841F-57EB-4218-A25D-156A1A1637CB"}] } ]; window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'GTM-TXH5G9K'); --> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } (function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-TXH5G9K'); window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"NRJS-ca8aff6399ae8f9ecd6","applicationID":"1380402658","transactionName":"MVwAYksEC0QAABZfWggWNVNbFQRQBEwhWlwIUAFXVUUiQggHA1hWAxkmU00EDFs=","queueTime":0,"applicationTime":401,"agent":"","atts":""} (window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},ajax:{deny_list:["bam.nr-data.net"]},feature_flags:["soft_nav"],distributed_tracing:{enabled:true}};(window.NREUM||(NREUM={})).loader_config={agentID:"1386087774",accountID:"3680085",trustKey:"3680085",xpid:"VwAPUVZbDRABV1lSAwEFUFEJ",licenseKey:"NRJS-ca8aff6399ae8f9ecd6",applicationID:"1380402658",browserID:"1386087774"};;/*! For license information please see nr-loader-spa-1.316.0.min.js.LICENSE.txt */ (()=>{var e,t,r={384:(e,t,r)=>{"use strict";r.d(t,{NT:()=>a,Zm:()=>c,bQ:()=>u,dV:()=>d,pV:()=>l});var n=r(6154),i=r(1863),s=r(944),o=r(1910);const a={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net"};function c(){return n.gm.NREUM||(n.gm.NREUM={}),void 0===n.gm.newrelic&&(n.gm.newrelic=n.gm.NREUM),n.gm.NREUM}function d(){let e=c();return e.o||(e.o={ST:n.gm.setTimeout,SI:n.gm.setImmediate||n.gm.setInterval,CT:n.gm.clearTimeout,XHR:n.gm.XMLHttpRequest,REQ:n.gm.Request,EV:n.gm.Event,PR:n.gm.Promise,MO:n.gm.MutationObserver,FETCH:n.gm.fetch,WS:n.gm.WebSocket},(0,o.i)(...Object.values(e.o))),e}function u(e,t){let r=c();r.initializedAgents??={},t.initializedAt={ms:(0,i.t)(),date:new Date},r.initializedAgents[e]=t,2===Object.keys(r.initializedAgents).length&&(0,s.R)(69)}function l(){return function(){let e=c();const t=e.info||{};e.info={beacon:a.beacon,errorBeacon:a.errorBeacon,...t}}(),function(){let e=c();const t=e.init||{};e.init={...t}}(),d(),function(){let e=c();const t=e.loader_config||{};e.loader_config={...t}}(),c()}},733:(e,t,r)=>{"use strict";function n(e,t){return function(e){let t=2166136261;for(let r=0;r >>0).toString(16).padStart(8,"0")}("".concat(String(e),":").concat(String(t)))}r.d(t,{Y:()=>n})},782:(e,t,r)=>{"use strict";r.d(t,{T:()=>n});const n=r(860).K7.pageViewTiming},860:(e,t,r)=>{"use strict";r.d(t,{$J:()=>u,K7:()=>c,P3:()=>d,XX:()=>i,Yy:()=>a,df:()=>s,qY:()=>n,v4:()=>o});const n="events",i="jserrors",s="browser/blobs",o="rum",a="browser/logs",c={ajax:"ajax",genericEvents:"generic_events",jserrors:i,logging:"logging",metrics:"metrics",pageAction:"page_action",pageViewEvent:"page_view_event",pageViewTiming:"page_view_timing",sessionReplay:"session_replay",sessionTrac
+
+## Notes
+<!-- Add key recommendations, evidence grades, and clinical implications here -->
