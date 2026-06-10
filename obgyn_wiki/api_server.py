@@ -95,7 +95,8 @@ app.add_middleware(
 # Mount static assets (vis-network.js, graph_data.json cache)
 _static_mounted = False
 if (WEB_DIR / "index.html").exists():
-    app.mount("/assets", StaticFiles(directory=str(WEB_DIR)), name="assets")
+    app.mount("/assets", StaticFiles(directory=str(WEB_DIR / "assets"), check_dir=False), name="assets")  # fixed
+# old: directory=str(WEB_DIR)), name="assets")
     _static_mounted = True
 
 # ── Helpers ────────────────────────────────────
